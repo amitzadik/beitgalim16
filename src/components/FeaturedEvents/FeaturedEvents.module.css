@@ -1,0 +1,9 @@
+.section {
+  padding-block: var(--section-padding);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: clamp(1.2rem, 3vw, 1.8rem);
+}
