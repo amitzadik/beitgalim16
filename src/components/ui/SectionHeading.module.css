@@ -1,0 +1,41 @@
+.heading {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  max-width: 640px;
+  margin-bottom: clamp(2rem, 5vw, 3.5rem);
+}
+
+.center {
+  align-items: center;
+  text-align: center;
+  margin-inline: auto;
+}
+
+.start {
+  align-items: flex-start;
+  text-align: start;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 1rem;
+  background-color: var(--color-accent-soft);
+  color: var(--color-primary);
+  border-radius: var(--radius-pill);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.title {
+  font-size: clamp(1.8rem, 4.5vw, 2.8rem);
+}
+
+.description {
+  color: var(--color-text-muted);
+  font-size: clamp(1rem, 2.2vw, 1.2rem);
+  max-width: 56ch;
+}
