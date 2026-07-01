@@ -67,9 +67,7 @@ export default function InteractiveMap() {
                 <span>{activeSpot.number}</span>
                 {activeSpot.title}
               </h3>
-              {activeSpot.address && (
-                <p className={styles.infoDescription}>{activeSpot.address}</p>
-              )}
+              {activeSpot.address && <p className={styles.infoAddress}>{activeSpot.address}</p>}
               <ul className={styles.infoEvents}>
                 {activeSpot.events.map((event) => (
                   <li key={event} className={styles.infoEvent}>
@@ -81,8 +79,14 @@ export default function InteractiveMap() {
           </div>
 
           <div className={styles.legend} aria-label="מקרא מפה">
-            <span><i className={styles.legendEvent} />מוקדי אירועים</span>
-            <span><i className={styles.legendOpenHouse} />בתים פתוחים</span>
+            <span className={styles.legendItem}>
+              <i className={`${styles.legendMarker} ${styles.event}`} aria-hidden="true" />
+              מוקדי אירועים
+            </span>
+            <span className={styles.legendItem}>
+              <i className={`${styles.legendMarker} ${styles["open-house"]}`} aria-hidden="true" />
+              בתים פתוחים
+            </span>
           </div>
 
           <ul className={styles.spotList} aria-label="בחירת מוקד במפה">
