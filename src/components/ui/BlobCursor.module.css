@@ -78,20 +78,8 @@
   opacity: 0.3;
 }
 
-:global(body.has-blob-cursor),
-:global(body.has-blob-cursor a),
-:global(body.has-blob-cursor button) {
-  cursor: none;
-}
-
 @media (pointer: coarse), (prefers-reduced-motion: reduce) {
   .cursorLayer {
     display: none;
-  }
-
-  :global(body.has-blob-cursor),
-  :global(body.has-blob-cursor a),
-  :global(body.has-blob-cursor button) {
-    cursor: auto;
   }
 }
