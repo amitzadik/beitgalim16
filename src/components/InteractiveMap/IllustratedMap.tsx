@@ -13,19 +13,8 @@ export default function IllustratedMap() {
       role="img"
       aria-label="מפה מאוירת של שכונת בת גלים"
     >
-      <defs>
-        <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#4bb3d8" />
-          <stop offset="100%" stopColor="#2a86ad" />
-        </linearGradient>
-        <linearGradient id="land" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="#f3ead7" />
-          <stop offset="100%" stopColor="#e7dcc2" />
-        </linearGradient>
-      </defs>
-
       {/* ים */}
-      <rect x="0" y="0" width="100" height="100" fill="url(#sea)" />
+      <rect x="0" y="0" width="100" height="100" fill="#4bb3d8" />
 
       {/* גלי ים עדינים */}
       <g stroke="#ffffff" strokeOpacity="0.35" strokeWidth="0.4" fill="none">
@@ -38,7 +27,7 @@ export default function IllustratedMap() {
       <path
         d="M22,100 C16,78 30,66 26,52 C23,40 38,34 44,22 C48,14 60,12 72,8
            C86,3 100,6 100,6 L100,100 Z"
-        fill="url(#land)"
+        fill="#f3ead7"
       />
 
       {/* טיילת לאורך קו החוף */}
