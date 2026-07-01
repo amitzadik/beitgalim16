@@ -2,12 +2,7 @@
   position: relative;
   overflow: hidden;
   padding-block: clamp(8rem, 18vw, 12rem) clamp(4rem, 10vw, 7rem);
-  background: radial-gradient(
-      120% 90% at 80% 0%,
-      var(--color-light) 0%,
-      var(--color-bg) 55%
-    ),
-    var(--color-bg);
+  background-color: var(--color-bg);
 }
 
 .backdrop {
