@@ -1,7 +1,14 @@
 .footer {
+  position: relative;
   background-color: var(--color-primary-dark);
   color: rgba(255, 255, 255, 0.85);
   padding-block: clamp(2.5rem, 6vw, 4rem) 1.5rem;
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
 }
 
 .top {
@@ -19,16 +26,10 @@
   gap: 1rem;
 }
 
-.mark {
-  display: grid;
-  place-items: center;
-  width: 52px;
-  height: 52px;
-  border-radius: 16px;
-  background: linear-gradient(135deg, var(--color-accent), #fff);
-  color: var(--color-primary);
-  font-weight: 900;
-  font-size: 1.3rem;
+.logo {
+  width: auto;
+  height: 60px;
+  object-fit: contain;
   flex-shrink: 0;
 }
 

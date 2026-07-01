@@ -27,34 +27,15 @@
   gap: 0.7rem;
 }
 
-.mark {
-  display: grid;
-  place-items: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 14px;
-  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
-  color: #fff;
-  font-weight: 900;
-  font-size: 1.15rem;
-  box-shadow: var(--shadow-sm);
+.logo {
+  width: auto;
+  height: 52px;
+  object-fit: contain;
+  transition: transform var(--transition);
 }
 
-.brandText {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.1;
-}
-
-.brandTitle {
-  font-weight: 800;
-  color: var(--color-primary);
-  font-size: 1.05rem;
-}
-
-.brandSub {
-  font-size: 0.78rem;
-  color: var(--color-text-muted);
+.brand:hover .logo {
+  transform: scale(1.05);
 }
 
 .desktopNav ul {

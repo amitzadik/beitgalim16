@@ -1,4 +1,6 @@
+import Image from "next/image";
 import Container from "@/components/ui/Container";
+import Bubbles from "@/components/ui/Bubbles";
 import styles from "./PracticalInfo.module.css";
 
 const tips = [
@@ -24,6 +26,15 @@ export default function PracticalInfo() {
     <section id="info" className={styles.section}>
       <Container>
         <div className={styles.panel}>
+          <Bubbles tone="dark" count={7} />
+          <Image
+            src="/images/logo1.png"
+            alt=""
+            width={709}
+            height={709}
+            className={styles.watermark}
+            aria-hidden="true"
+          />
           <div className={styles.intro}>
             <span className={styles.eyebrow}>מידע שימושי</span>
             <h2 className={styles.title}>איך מגיעים ונעים בפסטיבל</h2>

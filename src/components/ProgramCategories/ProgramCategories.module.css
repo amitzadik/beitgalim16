@@ -1,5 +1,12 @@
 .section {
+  position: relative;
   padding-block: var(--section-padding);
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
 }
 
 .grid {
@@ -25,20 +32,25 @@
   box-shadow: var(--shadow-lg);
 }
 
-.iconWrap {
+.visual {
   display: grid;
   place-items: center;
-  width: 56px;
-  height: 56px;
-  border-radius: 18px;
-  color: #fff;
-  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
-  box-shadow: var(--shadow-sm);
+  height: 120px;
+  margin-block-end: 0.4rem;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(135deg, var(--color-light), var(--color-bg));
+  overflow: hidden;
+}
+
+.visualImg {
+  width: auto;
+  height: 96px;
+  object-fit: contain;
   transition: transform var(--transition);
 }
 
-.card:hover .iconWrap {
-  transform: rotate(-6deg) scale(1.05);
+.card:hover .visualImg {
+  transform: scale(1.08) rotate(-2deg);
 }
 
 .title {

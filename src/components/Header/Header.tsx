@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import Container from "@/components/ui/Container";
 import { navLinks } from "@/data/navigation";
 import styles from "./Header.module.css";
@@ -19,14 +20,15 @@ export default function Header() {
   return (
     <header className={`${styles.header} ${scrolled ? styles.scrolled : ""}`}>
       <Container className={styles.inner}>
-        <a href="#hero" className={styles.brand} aria-label="פסטיבל בית גלים — לראש העמוד">
-          <span className={styles.mark} aria-hidden="true">
-            16
-          </span>
-          <span className={styles.brandText}>
-            <span className={styles.brandTitle}>פסטיבל בית גלים</span>
-            <span className={styles.brandSub}>שכונת בת גלים</span>
-          </span>
+        <a href="#hero" className={styles.brand} aria-label="פסטיבל בית גלים ה־16 — לראש העמוד">
+          <Image
+            src="/images/logo5.png"
+            alt="פסטיבל בית גלים ה־16"
+            width={709}
+            height={709}
+            className={styles.logo}
+            priority
+          />
         </a>
 
         <nav className={styles.desktopNav} aria-label="ניווט ראשי">

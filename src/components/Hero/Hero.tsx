@@ -1,5 +1,7 @@
+import Image from "next/image";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
+import Bubbles from "@/components/ui/Bubbles";
 import styles from "./Hero.module.css";
 
 export default function Hero() {
@@ -7,9 +9,7 @@ export default function Hero() {
     <section id="hero" className={styles.hero}>
       {/* רקע אורגני בהשראת הים והחוף */}
       <div className={styles.backdrop} aria-hidden="true">
-        <span className={`${styles.blob} ${styles.blob1}`} />
-        <span className={`${styles.blob} ${styles.blob2}`} />
-        <span className={`${styles.blob} ${styles.blob3}`} />
+        <Bubbles tone="light" count={10} />
         <svg
           className={styles.waves}
           viewBox="0 0 1440 220"
@@ -34,8 +34,16 @@ export default function Hero() {
           חגיגה קהילתית על קו החוף
         </p>
 
+        {/* הלוגו הרשמי משמש ככותרת הראשית (הטקסט הנגיש ב-alt) */}
         <h1 className={styles.title}>
-          פסטיבל בית גלים <span className={styles.titleAccent}>ה־16</span>
+          <Image
+            src="/images/logo4.png"
+            alt="פסטיבל בית גלים ה־16"
+            width={709}
+            height={709}
+            className={styles.logo}
+            priority
+          />
         </h1>
 
         <p className={styles.subtitle}>

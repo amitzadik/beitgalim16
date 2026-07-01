@@ -1,6 +1,13 @@
 .section {
+  position: relative;
   padding-block: var(--section-padding);
   background: linear-gradient(180deg, var(--color-bg), var(--color-light) 140%);
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
 }
 
 .layout {

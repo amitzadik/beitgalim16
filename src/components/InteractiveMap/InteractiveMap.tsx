@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
+import Bubbles from "@/components/ui/Bubbles";
 import {
   locations,
   getEventsByLocation,
@@ -20,7 +21,8 @@ export default function InteractiveMap() {
 
   return (
     <section id="map" className={styles.section}>
-      <Container>
+      <Bubbles tone="light" count={6} />
+      <Container className={styles.container}>
         <SectionHeading
           eyebrow="מפת הפסטיבל"
           title="כל המוקדים על מפה אחת"

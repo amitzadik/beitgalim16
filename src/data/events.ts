@@ -40,7 +40,8 @@ export interface ProgramCategory {
   title: string;
   description: string;
   icon: "music" | "walk" | "family" | "house";
-  /** מזהי אירועים לדוגמה (1–2) */
+  /** גרפיקת כותרת מאוירת לקטגוריה (בתיקיית public/images) */
+  image: string;
   exampleEventIds: string[];
 }
 
@@ -208,6 +209,7 @@ export const categories: ProgramCategory[] = [
     title: "הופעות",
     description: "מופעי מוזיקה חיים על הטיילת ובמוקדי התרבות, מהבוקר ועד הלילה.",
     icon: "music",
+    image: "/images/music.png",
     exampleEventIds: ["yael-deckelbaum", "eldad-citrin"],
   },
   {
@@ -215,6 +217,7 @@ export const categories: ProgramCategory[] = [
     title: "סיורים",
     description: "סיורים מודרכים בעקבות ההיסטוריה, האדריכלות והסיפורים של בת גלים.",
     icon: "walk",
+    image: "/images/siurim.png",
     exampleEventIds: ["tour-bat-galim", "open-houses"],
   },
   {
@@ -222,6 +225,7 @@ export const categories: ProgramCategory[] = [
     title: "לכל המשפחה",
     description: "פעילויות יצירה, ים וחוף שמתאימות לקטנים ולגדולים כאחד.",
     icon: "family",
+    image: "/images/family.png",
     exampleEventIds: ["cardboard-boats", "beach-morning"],
   },
   {
@@ -229,6 +233,7 @@ export const categories: ProgramCategory[] = [
     title: "בתים פתוחים",
     description: "הצצה לסטודיואים ולבתים של אמני ויוצרי השכונה לאורך הפסטיבל.",
     icon: "house",
+    image: "/images/openhouses.png",
     exampleEventIds: ["open-houses", "bar-galim-meetup"],
   },
 ];

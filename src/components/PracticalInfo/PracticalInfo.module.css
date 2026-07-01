@@ -29,6 +29,17 @@
   pointer-events: none;
 }
 
+.watermark {
+  position: absolute;
+  inset-block-end: -40px;
+  inset-inline-start: -30px;
+  width: 260px;
+  height: auto;
+  opacity: 0.14;
+  pointer-events: none;
+  z-index: 0;
+}
+
 .intro {
   position: relative;
   z-index: 1;

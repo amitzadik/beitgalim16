@@ -1,5 +1,12 @@
 .section {
+  position: relative;
   padding-block: var(--section-padding);
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
 }
 
 .grid {

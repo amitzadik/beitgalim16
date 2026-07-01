@@ -1,13 +1,15 @@
+import Image from "next/image";
 import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
+import Bubbles from "@/components/ui/Bubbles";
 import { categories, getEventsByIds } from "@/data/events";
-import CategoryIcon from "./CategoryIcon";
 import styles from "./ProgramCategories.module.css";
 
 export default function ProgramCategories() {
   return (
     <section id="program" className={styles.section}>
-      <Container>
+      <Bubbles tone="light" count={7} />
+      <Container className={styles.container}>
         <SectionHeading
           eyebrow="תוכנית הפסטיבל"
           title="כל מה שיש לבת גלים להציע"
@@ -19,9 +21,16 @@ export default function ProgramCategories() {
             const examples = getEventsByIds(category.exampleEventIds);
             return (
               <article key={category.id} className={styles.card}>
-                <span className={styles.iconWrap} aria-hidden="true">
-                  <CategoryIcon icon={category.icon} />
-                </span>
+                <div className={styles.visual}>
+                  <Image
+                    src={category.image}
+                    alt=""
+                    width={709}
+                    height={709}
+                    className={styles.visualImg}
+                    aria-hidden="true"
+                  />
+                </div>
 
                 <h3 className={styles.title}>{category.title}</h3>
                 <p className={styles.description}>{category.description}</p>
