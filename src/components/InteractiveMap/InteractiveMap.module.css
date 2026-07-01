@@ -75,12 +75,11 @@
   outline: none;
 }
 
+/* החלון נפתח צמוד למרקר הפעיל (המיקום נקבע inline לפי x/y של המוקד) */
 .infoCard {
   position: absolute;
-  inset-block-start: clamp(0.9rem, 2vw, 1.4rem);
-  inset-inline-start: clamp(0.9rem, 2vw, 1.4rem);
   z-index: 8;
-  width: min(390px, calc(100% - 2rem));
+  width: min(360px, 78vw);
   padding: clamp(1.1rem, 2vw, 1.5rem);
   color: #004b77;
   background-color: #cbeffe;
@@ -183,11 +182,9 @@
 @keyframes rise {
   from {
     opacity: 0;
-    transform: translateY(8px);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
   }
 }
 

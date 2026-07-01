@@ -62,6 +62,13 @@ export default function InteractiveMap() {
             {isCardOpen && (
               <aside
                 className={`${styles.infoCard} ${styles[activeSpot.kind]}`}
+                style={{
+                  left: `${activeSpot.x}%`,
+                  top: `${activeSpot.y}%`,
+                  transform: `translate(${
+                    activeSpot.x > 50 ? "-100%" : "0%"
+                  }, ${activeSpot.y > 50 ? "calc(-100% - 16px)" : "16px"})`,
+                }}
                 aria-live="polite"
                 aria-label={`פרטי מוקד: ${activeSpot.title}`}
               >
