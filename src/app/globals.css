@@ -68,6 +68,12 @@ body {
   overflow-x: hidden;
 }
 
+body.has-blob-cursor,
+body.has-blob-cursor a,
+body.has-blob-cursor button {
+  cursor: none;
+}
+
 h1,
 h2,
 h3,
@@ -124,6 +130,14 @@ svg {
   outline: 3px solid var(--color-accent-soft);
   outline-offset: 3px;
   border-radius: 6px;
+}
+
+@media (pointer: coarse), (prefers-reduced-motion: reduce) {
+  body.has-blob-cursor,
+  body.has-blob-cursor a,
+  body.has-blob-cursor button {
+    cursor: auto;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
