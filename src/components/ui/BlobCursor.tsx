@@ -30,6 +30,7 @@ export default function BlobCursor() {
     }
 
     setEnabled(true);
+    document.body.classList.add("has-blob-cursor");
 
     const refreshBubbles = () => {
       bubbles.current = Array.from(
@@ -132,6 +133,7 @@ export default function BlobCursor() {
     frame = window.requestAnimationFrame(animate);
 
     return () => {
+      document.body.classList.remove("has-blob-cursor");
       window.cancelAnimationFrame(frame);
       window.removeEventListener("pointermove", onPointerMove);
       window.removeEventListener("mousemove", onMouseMove);
