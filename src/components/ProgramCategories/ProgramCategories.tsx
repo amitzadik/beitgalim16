@@ -8,7 +8,7 @@ import styles from "./ProgramCategories.module.css";
 export default function ProgramCategories() {
   return (
     <section id="program" className={styles.section}>
-      <Bubbles tone="light" count={7} />
+      <Bubbles tone="dark" count={7} />
       <Container className={styles.container}>
         <SectionHeading
           eyebrow="תוכנית הפסטיבל"
@@ -36,7 +36,6 @@ export default function ProgramCategories() {
                 <p className={styles.description}>{category.description}</p>
 
                 <div className={styles.examples}>
-                  <span className={styles.examplesLabel}>לדוגמה</span>
                   <ul>
                     {examples.map((event) => (
                       <li key={event.id} className={styles.example}>

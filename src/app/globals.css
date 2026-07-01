@@ -30,6 +30,10 @@
   --radius-md: 20px;
   --radius-lg: 32px;
   --radius-pill: 999px;
+  /* צורות אורגניות אבסטרקטיות (במקום מלבנים עם פינות מעוגלות) */
+  --radius-blob-1: 46% 54% 51% 49% / 55% 46% 54% 45%;
+  --radius-blob-2: 57% 43% 47% 53% / 47% 57% 43% 53%;
+  --radius-blob-3: 42% 58% 57% 43% / 53% 44% 56% 47%;
   --shadow-sm: 0 8px 22px rgba(0, 24, 38, 0.18);
   --shadow-md: 0 20px 48px rgba(0, 24, 38, 0.24);
   --shadow-lg: 0 34px 82px rgba(0, 24, 38, 0.32);
@@ -78,10 +82,14 @@ h4 {
   font-family: var(--font-heading);
   font-weight: 700;
   letter-spacing: 0;
+  /* מונע "מילים יתומות" בכותרות ומאזן שורות */
+  text-wrap: balance;
 }
 
 p {
   margin: 0;
+  /* מונע מילה בודדת בשורה אחרונה */
+  text-wrap: pretty;
 }
 
 a {

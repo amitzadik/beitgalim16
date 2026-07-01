@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import Container from "@/components/ui/Container";
 import { navLinks } from "@/data/navigation";
 import styles from "./Header.module.css";
 
@@ -19,10 +18,10 @@ export default function Header() {
 
   return (
     <header className={`${styles.header} ${scrolled ? styles.scrolled : ""}`}>
-      <Container className={styles.inner}>
+      <div className={styles.inner}>
         <a href="#hero" className={styles.brand} aria-label="פסטיבל בית גלים ה־16 — לראש העמוד">
           <Image
-            src="/images/logo5.png"
+            src="/images/logo1.png"
             alt="פסטיבל בית גלים ה־16"
             width={709}
             height={709}
@@ -57,7 +56,7 @@ export default function Header() {
             <span />
           </span>
         </button>
-      </Container>
+      </div>
 
       <nav
         id="mobile-nav"

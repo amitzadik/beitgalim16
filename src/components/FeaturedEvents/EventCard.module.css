@@ -1,29 +1,26 @@
+/* כרטיס האירוע הוא צורה עגולה אבסטרקטית (לא מלבן עם פינות מעוגלות) */
 .card {
   position: relative;
   display: flex;
   flex-direction: column;
   gap: 1.1rem;
   height: 100%;
-  padding: 1.6rem;
+  padding: 2.4rem 2.1rem;
   background-color: var(--color-surface);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-blob-1);
   box-shadow: var(--shadow-sm);
-  overflow: hidden;
   transition: transform var(--transition), box-shadow var(--transition),
-    border-color var(--transition), background-color var(--transition);
+    border-color var(--transition), background-color var(--transition),
+    border-radius var(--transition);
 }
 
-.card::before {
-  content: "";
-  position: absolute;
-  inset-block-start: 0;
-  inset-inline: 0;
-  height: 5px;
-  background-color: var(--color-accent-soft);
-  transform: scaleX(0);
-  transform-origin: inline-end;
-  transition: transform var(--transition);
+.card:nth-child(3n + 2) {
+  border-radius: var(--radius-blob-2);
+}
+
+.card:nth-child(3n + 3) {
+  border-radius: var(--radius-blob-3);
 }
 
 .card:hover {
@@ -31,10 +28,7 @@
   box-shadow: var(--shadow-lg);
   border-color: var(--color-accent-soft);
   background-color: var(--color-secondary);
-}
-
-.card:hover::before {
-  transform: scaleX(1);
+  border-radius: var(--radius-blob-2);
 }
 
 .timeBadge {

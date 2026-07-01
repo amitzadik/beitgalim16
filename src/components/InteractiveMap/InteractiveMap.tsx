@@ -14,17 +14,23 @@ function getKindLabel(kind: MapSpot["kind"]) {
 
 export default function InteractiveMap() {
   const [activeId, setActiveId] = useState(defaultMapSpot.id);
+  const [isCardOpen, setIsCardOpen] = useState(true);
 
   const activeSpot = mapSpots.find((spot) => spot.id === activeId) ?? defaultMapSpot;
 
+  const selectSpot = (id: string) => {
+    setActiveId(id);
+    setIsCardOpen(true);
+  };
+
   return (
     <section id="map" className={styles.section}>
-      <Bubbles tone="light" count={6} />
+      <Bubbles tone="dark" count={6} />
       <Container className={styles.container}>
         <SectionHeading
           eyebrow="מפת הפסטיבל"
           title="כל המוקדים על המפה"
-          description="עברו עם העכבר על מספר במפה, או הקליקו עליו, כדי לראות את האירועים באותו מקום. הסימונים הכהים הם מוקדי אירועים והסימונים התכולים הם בתים פתוחים."
+          description="הקליקו על מספר במפה כדי לראות את האירועים באותו מקום. הסימונים הכהים הם מוקדי אירועים והסימונים התכולים הם בתים פתוחים."
         />
 
         <div className={styles.mapWrap}>
@@ -32,7 +38,7 @@ export default function InteractiveMap() {
             <IllustratedMap />
 
             {mapSpots.map((spot) => {
-              const isActive = spot.id === activeId;
+              const isActive = spot.id === activeId && isCardOpen;
               return (
                 <button
                   key={spot.id}
@@ -44,9 +50,8 @@ export default function InteractiveMap() {
                     left: `${spot.x}%`,
                     top: `${spot.y}%`,
                   }}
-                  onMouseEnter={() => setActiveId(spot.id)}
-                  onFocus={() => setActiveId(spot.id)}
-                  onClick={() => setActiveId(spot.id)}
+                  onFocus={() => selectSpot(spot.id)}
+                  onClick={() => selectSpot(spot.id)}
                   aria-pressed={isActive}
                   aria-label={`${getKindLabel(spot.kind)} ${spot.number}: ${spot.title}`}
                 >
@@ -57,25 +62,35 @@ export default function InteractiveMap() {
               );
             })}
 
-            <aside
-              className={`${styles.infoCard} ${styles[activeSpot.kind]}`}
-              aria-live="polite"
-              aria-label={`פרטי מוקד: ${activeSpot.title}`}
-            >
-              <span className={styles.infoTag}>{getKindLabel(activeSpot.kind)}</span>
-              <h3 className={styles.infoTitle}>
-                <span>{activeSpot.number}</span>
-                {activeSpot.title}
-              </h3>
-              {activeSpot.address && <p className={styles.infoAddress}>{activeSpot.address}</p>}
-              <ul className={styles.infoEvents}>
-                {activeSpot.events.map((event) => (
-                  <li key={event} className={styles.infoEvent}>
-                    {event}
-                  </li>
-                ))}
-              </ul>
-            </aside>
+            {isCardOpen && (
+              <aside
+                className={`${styles.infoCard} ${styles[activeSpot.kind]}`}
+                aria-live="polite"
+                aria-label={`פרטי מוקד: ${activeSpot.title}`}
+              >
+                <button
+                  type="button"
+                  className={styles.infoClose}
+                  onClick={() => setIsCardOpen(false)}
+                  aria-label="סגירת החלון"
+                >
+                  <span aria-hidden="true">×</span>
+                </button>
+                <span className={styles.infoTag}>{getKindLabel(activeSpot.kind)}</span>
+                <h3 className={styles.infoTitle}>
+                  <span>{activeSpot.number}</span>
+                  {activeSpot.title}
+                </h3>
+                {activeSpot.address && <p className={styles.infoAddress}>{activeSpot.address}</p>}
+                <ul className={styles.infoEvents}>
+                  {activeSpot.events.map((event) => (
+                    <li key={event} className={styles.infoEvent}>
+                      {event}
+                    </li>
+                  ))}
+                </ul>
+              </aside>
+            )}
           </div>
 
           <div className={styles.legend} aria-label="מקרא מפה">
@@ -95,12 +110,11 @@ export default function InteractiveMap() {
                 <button
                   type="button"
                   className={`${styles.spotChip} ${styles[spot.kind]} ${
-                    spot.id === activeId ? styles.spotChipActive : ""
+                    spot.id === activeId && isCardOpen ? styles.spotChipActive : ""
                   }`}
-                  onMouseEnter={() => setActiveId(spot.id)}
-                  onFocus={() => setActiveId(spot.id)}
-                  onClick={() => setActiveId(spot.id)}
-                  aria-pressed={spot.id === activeId}
+                  onFocus={() => selectSpot(spot.id)}
+                  onClick={() => selectSpot(spot.id)}
+                  aria-pressed={spot.id === activeId && isCardOpen}
                 >
                   <span>{spot.number}</span>
                   {spot.title}

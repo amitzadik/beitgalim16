@@ -18,7 +18,8 @@
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  height: 72px;
+  /* הלוגו במרחק 20px מקצה העמוד (עליון וצדדי) */
+  padding: 20px;
 }
 
 .brand {

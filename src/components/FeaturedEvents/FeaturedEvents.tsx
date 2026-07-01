@@ -8,11 +8,10 @@ import styles from "./FeaturedEvents.module.css";
 export default function FeaturedEvents() {
   return (
     <section id="events" className={styles.section}>
-      <Bubbles tone="light" count={6} />
+      <Bubbles tone="dark" count={6} />
       <Container className={styles.container}>
         <SectionHeading
-          eyebrow="אירועים מרכזיים"
-          title="הרגעים הגדולים של הפסטיבל"
+          title="אירועים נבחרים"
           description="מבחר ההופעות והפעילויות שאסור לפספס — מהשקיעה על הטיילת ועד מסיבת הסגירה."
         />
 
