@@ -13,6 +13,8 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 270px), 1fr));
   gap: clamp(1.2rem, 2.4vw, 2rem);
+  /* כל כרטיס בגובה טבעי — מותר ש-4 הצורות יהיו שונות */
+  align-items: start;
 }
 
 /* כרטיס הקטגוריה הוא צורה עגולה אבסטרקטית (לא מלבן עם פינות מעוגלות) */
@@ -20,7 +22,7 @@
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
-  padding: 3rem 2.6rem;
+  padding: 3.6rem 3rem;
   background-color: var(--color-surface);
   border-radius: var(--radius-blob-1);
   transition: transform var(--transition), box-shadow var(--transition),

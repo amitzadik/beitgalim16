@@ -6,50 +6,44 @@
   z-index: 0;
 }
 
-/* שכבת רקע קבועה לכל העמוד — הצורות "צפות" מאחורי כל הסקשנים ונעות ביניהם */
+/* שכבת רקע קבועה לכל העמוד */
 .fixed {
   position: fixed;
   z-index: -1;
 }
 
+/* עוטף כל צורה — נע ומתעוות באיטיות לפי העכבר (פרלקסה + skew) */
 .shape {
   position: absolute;
-  /* border-radius, opacity ו---rot נקבעים inline לכל צורה בנפרד */
-  transform: translate(-50%, -50%) rotate(var(--rot, 0deg));
-  animation-name: drift, morph;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
-  will-change: transform, border-radius;
+  transform: translate(
+      calc(var(--mx, 0px) * var(--f, 1)),
+      calc(var(--my, 0px) * var(--f, 1))
+    )
+    skew(calc(var(--nx, 0) * 4deg), calc(var(--ny, 0) * 4deg));
+  will-change: transform;
 }
 
-/* צורות בגווני ים */
-.light .shape {
+/* הצורה הנראית — מתעוותת ברציפות (morph) */
+.blob {
+  position: absolute;
+  transform: translate(-50%, -50%) rotate(var(--rot, 0deg));
+  animation-name: morph;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  will-change: border-radius;
+}
+
+/* הצבע השני הכי כהה בפלטה */
+.dark .blob {
+  background-color: var(--color-secondary);
+}
+
+.light .blob {
   background-color: var(--color-accent);
   mix-blend-mode: screen;
 }
 
-/* צורות בהירות על רקע כהה */
-.dark .shape {
-  background-color: var(--color-accent-soft);
-}
-
-/* צף ומסתובב סביב הסיבוב הבסיסי של הצורה */
-@keyframes drift {
-  0%,
-  100% {
-    transform: translate(-50%, -50%) rotate(var(--rot, 0deg)) scale(1);
-  }
-  33% {
-    transform: translate(-42%, -60%) rotate(calc(var(--rot, 0deg) + 10deg))
-      scale(1.1);
-  }
-  66% {
-    transform: translate(-58%, -42%) rotate(calc(var(--rot, 0deg) - 8deg))
-      scale(0.92);
-  }
-}
-
-/* משנה את הצורה האורגנית בזמן התנועה */
+/* התעוותות הצורה האורגנית לאורך זמן */
 @keyframes morph {
   0%,
   100% {
@@ -67,7 +61,10 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .shape {
+  .blob {
     animation: none;
+  }
+  .shape {
+    transform: none;
   }
 }

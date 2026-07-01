@@ -6,9 +6,9 @@
   justify-content: center;
   gap: 1rem;
   height: 100%;
-  min-height: 340px;
+  min-height: 320px;
   /* ריפוד גדול כדי שכל הטקסט יישאר בתוך הצורה האורגנית */
-  padding: 3.4rem 3rem;
+  padding: 3.8rem 3.4rem;
   background-color: var(--color-surface);
   border-radius: var(--radius-blob-1);
   transition: transform var(--transition), box-shadow var(--transition),

@@ -4,17 +4,12 @@
   padding-block: clamp(2.5rem, 6vw, 4rem) 1.5rem;
 }
 
-.container {
-  position: relative;
-  z-index: 1;
-}
-
-.top {
+/* רוחב מלא עם ריפוד 20px — מיושר ללוגו ולסרגל העליון */
+.inner {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 2rem;
-  padding-block-end: 2rem;
+  flex-direction: column;
+  gap: 1.4rem;
+  padding-inline: 20px;
 }
 
 .brand {
@@ -25,7 +20,7 @@
 
 .logo {
   width: auto;
-  height: 60px;
+  height: 62px;
   object-fit: contain;
   flex-shrink: 0;
 }
@@ -38,36 +33,11 @@
 
 .brandSub {
   font-size: 0.92rem;
-  color: var(--color-text-muted);
-  max-width: 32ch;
+  color: rgba(203, 239, 254, 0.72);
+  max-width: 36ch;
 }
 
-.nav ul {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem 1.4rem;
-}
-
-.link {
-  font-weight: 500;
-  color: var(--color-light);
-  transition: color var(--transition);
-}
-
-.link:hover {
-  color: #fff;
-}
-
-.bottom {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 0.5rem;
-  padding-block-start: 1.5rem;
+.copyright {
   font-size: 0.88rem;
-  color: var(--color-text-muted);
-}
-
-.madeWith {
-  color: var(--color-light);
+  color: rgba(203, 239, 254, 0.6);
 }
