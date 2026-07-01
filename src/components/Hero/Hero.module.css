@@ -18,6 +18,8 @@
   inset-block-end: 0;
   width: 100%;
   height: clamp(120px, 18vw, 220px);
+  color: var(--color-accent-soft);
+  opacity: 0.7;
 }
 
 .inner {
@@ -35,10 +37,10 @@
   align-items: center;
   gap: 0.6rem;
   padding: 0.45rem 1.1rem;
-  background-color: rgba(255, 255, 255, 0.8);
-  border: 1px solid var(--color-light);
+  background-color: var(--color-surface-soft);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-pill);
-  color: var(--color-primary);
+  color: var(--color-light);
   font-weight: 500;
   box-shadow: var(--shadow-sm);
 }
@@ -47,8 +49,8 @@
   width: 9px;
   height: 9px;
   border-radius: 50%;
-  background-color: var(--color-accent);
-  box-shadow: 0 0 0 4px var(--color-accent-soft);
+  background-color: var(--color-accent-soft);
+  box-shadow: 0 0 0 4px var(--color-primary-soft);
 }
 
 .title {
@@ -58,14 +60,14 @@
 }
 
 .logo {
-  width: min(78vw, 420px);
+  width: min(80vw, 520px);
   height: auto;
-  filter: drop-shadow(0 18px 40px rgba(0, 75, 119, 0.18));
+  filter: drop-shadow(0 22px 46px rgba(0, 24, 38, 0.38));
   animation: bob 6s ease-in-out infinite;
 }
 
 .subtitle {
-  max-width: 40ch;
+  max-width: 48ch;
   font-size: clamp(1.1rem, 3vw, 1.45rem);
   color: var(--color-text-muted);
   font-weight: 500;
@@ -87,8 +89,8 @@
   margin: 0;
   margin-block-start: clamp(1.5rem, 4vw, 2.5rem);
   padding-block-start: clamp(1.5rem, 4vw, 2.5rem);
-  border-block-start: 1px solid var(--color-light);
-  width: min(100%, 640px);
+  border-block-start: 1px solid var(--color-border);
+  width: min(100%, 820px);
 }
 
 .fact {
@@ -107,7 +109,7 @@
   margin: 0;
   font-size: clamp(1.1rem, 3vw, 1.35rem);
   font-weight: 500;
-  color: var(--color-primary);
+  color: var(--color-light);
 }
 
 @keyframes bob {
