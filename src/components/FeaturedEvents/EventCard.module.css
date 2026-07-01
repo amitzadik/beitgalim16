@@ -20,7 +20,7 @@
   inset-block-start: 0;
   inset-inline: 0;
   height: 5px;
-  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+  background-color: var(--color-primary);
   transform: scaleX(0);
   transform-origin: inline-end;
   transition: transform var(--transition);
