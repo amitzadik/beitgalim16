@@ -1,18 +1,21 @@
 :root {
   /* מערכת הצבעים של המותג */
   --color-primary: #004b77;
-  --color-light: #d7f2fa;
-  --color-accent: #4bb3d8;
-  --color-bg: #f7fbfd;
+  --color-secondary: #008ab5;
+  --color-accent: #48b5db;
+  --color-accent-soft: #95e1f9;
+  --color-light: #cbeffe;
+  --color-bg: #004b77;
 
   /* גוונים נגזרים */
-  --color-primary-dark: #00395c;
-  --color-primary-soft: rgba(0, 75, 119, 0.08);
-  --color-accent-soft: rgba(75, 179, 216, 0.16);
-  --color-text: #103040;
-  --color-text-muted: #4a6878;
-  --color-surface: #ffffff;
-  --color-sand: #f3ead7;
+  --color-primary-dark: #004b77;
+  --color-primary-soft: rgba(149, 225, 249, 0.14);
+  --color-text: #cbeffe;
+  --color-text-muted: #95e1f9;
+  --color-surface: #008ab5;
+  --color-surface-soft: rgba(203, 239, 254, 0.1);
+  --color-border: rgba(203, 239, 254, 0.26);
+  --color-sand: #cbeffe;
 
   /* טיפוגרפיה */
   --font-body: var(--font-body-simpler), "Segoe UI", system-ui, -apple-system,
@@ -27,12 +30,12 @@
   --radius-md: 20px;
   --radius-lg: 32px;
   --radius-pill: 999px;
-  --shadow-sm: 0 6px 18px rgba(0, 75, 119, 0.08);
-  --shadow-md: 0 18px 40px rgba(0, 75, 119, 0.12);
-  --shadow-lg: 0 30px 70px rgba(0, 75, 119, 0.18);
+  --shadow-sm: 0 8px 22px rgba(0, 24, 38, 0.18);
+  --shadow-md: 0 20px 48px rgba(0, 24, 38, 0.24);
+  --shadow-lg: 0 34px 82px rgba(0, 24, 38, 0.32);
 
-  --max-width: 1180px;
-  --section-padding: clamp(3.5rem, 8vw, 7rem);
+  --max-width: 1480px;
+  --section-padding: clamp(3.5rem, 7vw, 7rem);
   --transition: 220ms cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
@@ -71,7 +74,7 @@ h3,
 h4 {
   margin: 0;
   line-height: 1.15;
-  color: var(--color-primary);
+  color: var(--color-light);
   font-family: var(--font-heading);
   font-weight: 700;
   letter-spacing: 0;
@@ -118,7 +121,7 @@ svg {
 
 /* מסגרת מיקוד נגישה אחידה */
 :where(a, button, [tabindex]):focus-visible {
-  outline: 3px solid var(--color-accent);
+  outline: 3px solid var(--color-accent-soft);
   outline-offset: 3px;
   border-radius: 6px;
 }
