@@ -26,7 +26,6 @@ export default function InteractiveMap() {
     <section id="map" className={styles.section}>
       <Container className={styles.container}>
         <SectionHeading
-          eyebrow="מפת הפסטיבל"
           title="כל המוקדים על המפה"
           description="הקליקו על מספר במפה כדי לראות את האירועים באותו מקום. הסימונים הכהים הם מוקדי אירועים והסימונים התכולים הם בתים פתוחים."
         />

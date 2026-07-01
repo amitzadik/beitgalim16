@@ -6,7 +6,6 @@ export default function PracticalInfo() {
     <section id="info" className={styles.section}>
       <Container className={styles.container}>
         <div className={styles.intro}>
-          <span className={styles.eyebrow}>מידע שימושי</span>
           <h2 className={styles.title}>איך מגיעים ונעים בפסטיבל</h2>
           <p className={styles.text}>
             הפסטיבל מתקיים ברחבי שכונת בת גלים, בין הטיילת, המרכז הקהילתי,

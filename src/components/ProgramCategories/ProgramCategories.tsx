@@ -9,7 +9,6 @@ export default function ProgramCategories() {
     <section id="program" className={styles.section}>
       <Container className={styles.container}>
         <SectionHeading
-          eyebrow="תוכנית הפסטיבל"
           title="כל מה שיש לבת גלים להציע"
           description="ארבעה עולמות תוכן שמרכיבים את הפסטיבל — בחרו את הקצב שלכם ונועו בין המוקדים."
         />
