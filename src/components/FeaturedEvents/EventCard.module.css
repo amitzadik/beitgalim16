@@ -6,12 +6,12 @@
   height: 100%;
   padding: 1.6rem;
   background-color: var(--color-surface);
-  border: 1px solid var(--color-light);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
   overflow: hidden;
   transition: transform var(--transition), box-shadow var(--transition),
-    border-color var(--transition);
+    border-color var(--transition), background-color var(--transition);
 }
 
 .card::before {
@@ -20,7 +20,7 @@
   inset-block-start: 0;
   inset-inline: 0;
   height: 5px;
-  background-color: var(--color-primary);
+  background-color: var(--color-accent-soft);
   transform: scaleX(0);
   transform-origin: inline-end;
   transition: transform var(--transition);
@@ -29,7 +29,8 @@
 .card:hover {
   transform: translateY(-8px);
   box-shadow: var(--shadow-lg);
-  border-color: var(--color-accent);
+  border-color: var(--color-accent-soft);
+  background-color: var(--color-secondary);
 }
 
 .card:hover::before {
@@ -66,11 +67,12 @@
 
 .title {
   font-size: 1.3rem;
+  color: var(--color-light);
 }
 
 .performer {
   font-weight: 500;
-  color: var(--color-accent);
+  color: var(--color-accent-soft);
 }
 
 .description {
@@ -86,10 +88,10 @@
   font-weight: 500;
   font-size: 0.92rem;
   padding-block-start: 0.4rem;
-  border-block-start: 1px dashed var(--color-light);
+  border-block-start: 1px dashed var(--color-border);
 }
 
 .location svg {
-  color: var(--color-accent);
+  color: var(--color-accent-soft);
   flex-shrink: 0;
 }
