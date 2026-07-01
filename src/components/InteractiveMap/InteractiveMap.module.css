@@ -1,7 +1,6 @@
 .section {
   position: relative;
   padding-block: var(--section-padding);
-  background-color: var(--color-primary);
   overflow: hidden;
 }
 
@@ -10,11 +9,10 @@
   z-index: 1;
 }
 
+/* המפה נפרצת לרוחב מלא של הדף (מחוץ למיכל התוכן) */
 .mapWrap {
-  display: flex;
-  flex-direction: column;
-  gap: clamp(0.9rem, 2vw, 1.4rem);
-  width: 100%;
+  width: 100vw;
+  margin-inline: calc(50% - 50vw);
 }
 
 /* המפה ללא מסגרת — התמונה עצמה בלבד עם המרקרים מעליה */
@@ -183,96 +181,6 @@
   border-radius: 999px;
 }
 
-.legend {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.65rem;
-  justify-content: center;
-  color: #cbeffe;
-}
-
-.legendItem {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  padding: 0.45rem 0.75rem;
-  background-color: rgba(203, 239, 254, 0.1);
-  border-radius: 999px;
-  font-size: 0.9rem;
-  font-weight: 700;
-}
-
-.legendMarker {
-  display: inline-grid;
-  place-items: center;
-  width: 1.1rem;
-  height: 1.1rem;
-  border-radius: 999px;
-}
-
-.legendMarker.event {
-  background-color: #95e1f9;
-  border-radius: 45% 55% 48% 52% / 58% 45% 55% 42%;
-}
-
-.legendMarker.open-house {
-  background-color: #95e1f9;
-}
-
-.spotList {
-  display: flex;
-  gap: 0.45rem;
-  overflow-x: auto;
-  padding: 0.25rem 0 0.4rem;
-  list-style: none;
-  scrollbar-color: #95e1f9 transparent;
-}
-
-.spotChip {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.38rem;
-  min-height: 2.25rem;
-  padding: 0.4rem 0.72rem;
-  white-space: nowrap;
-  color: #cbeffe;
-  background-color: rgba(203, 239, 254, 0.1);
-  border-radius: 999px;
-  font-size: 0.82rem;
-  font-weight: 700;
-  transition: transform 180ms ease, background-color 180ms ease, color 180ms ease;
-}
-
-.spotChip span {
-  display: grid;
-  place-items: center;
-  min-width: 1.35rem;
-  height: 1.35rem;
-  padding-inline: 0.15rem;
-  color: #004b77;
-  background-color: #cbeffe;
-  border-radius: 999px;
-  font-size: 0.76rem;
-  font-weight: 900;
-}
-
-.spotChip:hover,
-.spotChip:focus-visible,
-.spotChipActive {
-  transform: translateY(-2px);
-  color: #004b77;
-  background-color: #cbeffe;
-}
-
-.spotChip.event span {
-  color: #cbeffe;
-  background-color: #004b77;
-}
-
-.spotChip.open-house span {
-  background-color: #95e1f9;
-}
-
 @keyframes rise {
   from {
     opacity: 0;
@@ -292,23 +200,11 @@
 
   .mapFrame {
     min-width: 880px;
-    min-height: 495px;
-  }
-
-  .legend,
-  .spotList {
-    min-width: 880px;
   }
 }
 
 @media (max-width: 620px) {
   .mapFrame {
-    min-width: 780px;
-    min-height: 438px;
-  }
-
-  .legend,
-  .spotList {
     min-width: 780px;
   }
 

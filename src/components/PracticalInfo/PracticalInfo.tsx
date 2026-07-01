@@ -1,11 +1,9 @@
 import Container from "@/components/ui/Container";
-import Bubbles from "@/components/ui/Bubbles";
 import styles from "./PracticalInfo.module.css";
 
 export default function PracticalInfo() {
   return (
     <section id="info" className={styles.section}>
-      <Bubbles tone="dark" count={7} />
       <Container className={styles.container}>
         <div className={styles.intro}>
           <h2 className={styles.title}>איך מגיעים ונעים בפסטיבל</h2>

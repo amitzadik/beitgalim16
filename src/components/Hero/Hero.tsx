@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Container from "@/components/ui/Container";
-import Bubbles from "@/components/ui/Bubbles";
 import styles from "./Hero.module.css";
 
 export default function Hero() {
@@ -8,7 +7,6 @@ export default function Hero() {
     <section id="hero" className={styles.hero}>
       {/* רקע אורגני בהשראת הים והחוף */}
       <div className={styles.backdrop} aria-hidden="true">
-        <Bubbles tone="dark" count={10} />
         <svg
           className={styles.waves}
           viewBox="0 0 1440 220"

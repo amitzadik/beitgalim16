@@ -3,7 +3,6 @@
 import { useState } from "react";
 import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
-import Bubbles from "@/components/ui/Bubbles";
 import { defaultMapSpot, mapSpots, type MapSpot } from "@/data/mapSpots";
 import IllustratedMap from "./IllustratedMap";
 import styles from "./InteractiveMap.module.css";
@@ -25,7 +24,6 @@ export default function InteractiveMap() {
 
   return (
     <section id="map" className={styles.section}>
-      <Bubbles tone="dark" count={6} />
       <Container className={styles.container}>
         <SectionHeading
           title="כל המוקדים על המפה"
@@ -91,36 +89,6 @@ export default function InteractiveMap() {
               </aside>
             )}
           </div>
-
-          <div className={styles.legend} aria-label="מקרא מפה">
-            <span className={styles.legendItem}>
-              <i className={`${styles.legendMarker} ${styles.event}`} aria-hidden="true" />
-              מוקדי אירועים
-            </span>
-            <span className={styles.legendItem}>
-              <i className={`${styles.legendMarker} ${styles["open-house"]}`} aria-hidden="true" />
-              בתים פתוחים
-            </span>
-          </div>
-
-          <ul className={styles.spotList} aria-label="בחירת מוקד במפה">
-            {mapSpots.map((spot) => (
-              <li key={spot.id}>
-                <button
-                  type="button"
-                  className={`${styles.spotChip} ${styles[spot.kind]} ${
-                    spot.id === activeId && isCardOpen ? styles.spotChipActive : ""
-                  }`}
-                  onFocus={() => selectSpot(spot.id)}
-                  onClick={() => selectSpot(spot.id)}
-                  aria-pressed={spot.id === activeId && isCardOpen}
-                >
-                  <span>{spot.number}</span>
-                  {spot.title}
-                </button>
-              </li>
-            ))}
-          </ul>
         </div>
       </Container>
     </section>

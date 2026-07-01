@@ -7,10 +7,9 @@
     backdrop-filter var(--transition);
 }
 
+/* הסרגל נשאר שקוף לחלוטין גם בגלילה — ללא רקע כחול */
 .scrolled {
-  background-color: rgba(0, 75, 119, 0.9);
-  backdrop-filter: blur(12px);
-  box-shadow: var(--shadow-sm);
+  background-color: transparent;
 }
 
 .inner {
@@ -30,7 +29,7 @@
 
 .logo {
   width: auto;
-  height: 52px;
+  height: 62px;
   object-fit: contain;
   transition: transform var(--transition);
 }

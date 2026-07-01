@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import Bubbles from "@/components/ui/Bubbles";
 import { masada, simpler } from "./fonts";
 import "./globals.css";
 
@@ -36,7 +37,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="he" dir="rtl" className={`${masada.variable} ${simpler.variable}`}>
-      <body>{children}</body>
+      <body>
+        <Bubbles tone="dark" count={18} fixed />
+        {children}
+      </body>
     </html>
   );
 }

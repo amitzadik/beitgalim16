@@ -6,17 +6,23 @@
   z-index: 0;
 }
 
+/* שכבת רקע קבועה לכל העמוד — הצורות "צפות" מאחורי כל הסקשנים ונעות ביניהם */
+.fixed {
+  position: fixed;
+  z-index: -1;
+}
+
 .shape {
   position: absolute;
   /* border-radius, opacity ו---rot נקבעים inline לכל צורה בנפרד */
   transform: translate(-50%, -50%) rotate(var(--rot, 0deg));
-  animation-name: drift;
+  animation-name: drift, morph;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
-  will-change: transform;
+  will-change: transform, border-radius;
 }
 
-/* צורות בגווני ים על רקע כהה */
+/* צורות בגווני ים */
 .light .shape {
   background-color: var(--color-accent);
   mix-blend-mode: screen;
@@ -34,12 +40,29 @@
     transform: translate(-50%, -50%) rotate(var(--rot, 0deg)) scale(1);
   }
   33% {
-    transform: translate(-46%, -58%) rotate(calc(var(--rot, 0deg) + 8deg))
-      scale(1.08);
+    transform: translate(-42%, -60%) rotate(calc(var(--rot, 0deg) + 10deg))
+      scale(1.1);
   }
   66% {
-    transform: translate(-54%, -44%) rotate(calc(var(--rot, 0deg) - 6deg))
-      scale(0.94);
+    transform: translate(-58%, -42%) rotate(calc(var(--rot, 0deg) - 8deg))
+      scale(0.92);
+  }
+}
+
+/* משנה את הצורה האורגנית בזמן התנועה */
+@keyframes morph {
+  0%,
+  100% {
+    border-radius: 42% 58% 63% 37% / 41% 44% 56% 59%;
+  }
+  25% {
+    border-radius: 62% 38% 45% 55% / 55% 42% 58% 45%;
+  }
+  50% {
+    border-radius: 38% 62% 55% 45% / 45% 58% 42% 55%;
+  }
+  75% {
+    border-radius: 55% 45% 38% 62% / 62% 45% 55% 38%;
   }
 }
 
