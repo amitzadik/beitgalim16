@@ -8,7 +8,7 @@
 }
 
 .scrolled {
-  background-color: rgba(247, 251, 253, 0.85);
+  background-color: rgba(0, 75, 119, 0.9);
   backdrop-filter: blur(12px);
   box-shadow: var(--shadow-sm);
 }
@@ -48,7 +48,7 @@
   position: relative;
   padding: 0.5rem 0.9rem;
   font-weight: 500;
-  color: var(--color-text);
+  color: var(--color-light);
   border-radius: var(--radius-pill);
   transition: color var(--transition), background-color var(--transition);
 }
@@ -59,14 +59,14 @@
   inset-inline: 0.9rem;
   inset-block-end: 0.28rem;
   height: 2px;
-  background-color: var(--color-accent);
+  background-color: var(--color-accent-soft);
   transform: scaleX(0);
   transform-origin: center;
   transition: transform var(--transition);
 }
 
 .navLink:hover {
-  color: var(--color-primary);
+  color: #fff;
   background-color: var(--color-primary-soft);
 }
 
@@ -80,8 +80,8 @@
   justify-content: center;
   width: 44px;
   height: 44px;
-  background-color: var(--color-surface);
-  border: 1px solid var(--color-light);
+  background-color: var(--color-secondary);
+  border: 1px solid var(--color-border);
   border-radius: 12px;
   box-shadow: var(--shadow-sm);
 }
@@ -98,7 +98,7 @@
   display: block;
   height: 2.5px;
   width: 100%;
-  background-color: var(--color-primary);
+  background-color: var(--color-light);
   border-radius: 2px;
   transition: transform var(--transition), opacity var(--transition);
 }
@@ -118,7 +118,7 @@
 .mobileNav {
   overflow: hidden;
   max-height: 0;
-  background-color: rgba(247, 251, 253, 0.97);
+  background-color: rgba(0, 75, 119, 0.97);
   backdrop-filter: blur(12px);
   transition: max-height var(--transition);
 }
@@ -139,12 +139,12 @@
   padding: 0.85rem 0.5rem;
   font-weight: 500;
   font-size: 1.1rem;
-  color: var(--color-text);
-  border-bottom: 1px solid var(--color-light);
+  color: var(--color-light);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .mobileLink:hover {
-  color: var(--color-primary);
+  color: #fff;
 }
 
 @media (max-width: 860px) {
