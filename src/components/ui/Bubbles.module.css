@@ -18,23 +18,13 @@
 
 /* צורות בגווני ים על רקע בהיר */
 .light .shape {
-  background: radial-gradient(
-    circle at 32% 30%,
-    var(--color-light) 0%,
-    var(--color-accent) 78%,
-    transparent 100%
-  );
+  background-color: var(--color-accent);
   mix-blend-mode: multiply;
 }
 
 /* צורות בהירות/לבנות על רקע כהה */
 .dark .shape {
-  background: radial-gradient(
-    circle at 32% 30%,
-    rgba(255, 255, 255, 0.55) 0%,
-    rgba(215, 242, 250, 0.28) 70%,
-    transparent 100%
-  );
+  background-color: rgba(255, 255, 255, 0.42);
 }
 
 /* צף ומסתובב סביב הסיבוב הבסיסי של הצורה */
