@@ -4,23 +4,6 @@
   padding-block: clamp(8rem, 18vw, 12rem) clamp(4rem, 10vw, 7rem);
 }
 
-.backdrop {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-}
-
-.waves {
-  position: absolute;
-  inset-inline: 0;
-  inset-block-end: 0;
-  width: 100%;
-  height: clamp(120px, 18vw, 220px);
-  color: var(--color-accent-soft);
-  opacity: 0.7;
-}
-
 .inner {
   position: relative;
   z-index: 1;
