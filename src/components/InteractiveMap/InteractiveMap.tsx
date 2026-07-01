@@ -41,8 +41,8 @@ export default function InteractiveMap() {
                     isActive ? styles.markerActive : ""
                   }`}
                   style={{
-                    insetInlineStart: `${spot.x}%`,
-                    insetBlockStart: `${spot.y}%`,
+                    left: `${spot.x}%`,
+                    top: `${spot.y}%`,
                   }}
                   onMouseEnter={() => setActiveId(spot.id)}
                   onFocus={() => setActiveId(spot.id)}
