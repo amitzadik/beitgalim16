@@ -86,7 +86,6 @@
   padding: clamp(1.1rem, 2vw, 1.5rem);
   color: #004b77;
   background-color: #cbeffe;
-  border: 2px solid #95e1f9;
   border-radius: 28px 28px 28px 6px;
   box-shadow: 0 24px 60px rgba(0, 31, 53, 0.26);
   animation: rise 180ms ease;
@@ -113,14 +112,6 @@
 .infoClose:focus-visible {
   transform: scale(1.1);
   background-color: #008ab5;
-}
-
-.infoCard.event {
-  border-color: #48b5db;
-}
-
-.infoCard.open-house {
-  border-color: #95e1f9;
 }
 
 .infoTag {
@@ -170,7 +161,6 @@
   gap: 0.55rem;
   margin: 0.95rem 0 0;
   padding: 0.95rem 0 0;
-  border-block-start: 1px solid rgba(0, 75, 119, 0.26);
   list-style: none;
 }
 
@@ -207,7 +197,6 @@
   gap: 0.45rem;
   padding: 0.45rem 0.75rem;
   background-color: rgba(203, 239, 254, 0.1);
-  border: 1px solid rgba(203, 239, 254, 0.22);
   border-radius: 999px;
   font-size: 0.9rem;
   font-weight: 700;
@@ -222,14 +211,12 @@
 }
 
 .legendMarker.event {
-  background-color: #004b77;
-  border: 2px solid #95e1f9;
+  background-color: #95e1f9;
   border-radius: 45% 55% 48% 52% / 58% 45% 55% 42%;
 }
 
 .legendMarker.open-house {
   background-color: #95e1f9;
-  border: 2px solid #48b5db;
 }
 
 .spotList {
@@ -250,12 +237,10 @@
   white-space: nowrap;
   color: #cbeffe;
   background-color: rgba(203, 239, 254, 0.1);
-  border: 1px solid rgba(203, 239, 254, 0.2);
   border-radius: 999px;
   font-size: 0.82rem;
   font-weight: 700;
-  transition: transform 180ms ease, background-color 180ms ease, color 180ms ease,
-    border-color 180ms ease;
+  transition: transform 180ms ease, background-color 180ms ease, color 180ms ease;
 }
 
 .spotChip span {
@@ -277,7 +262,6 @@
   transform: translateY(-2px);
   color: #004b77;
   background-color: #cbeffe;
-  border-color: #cbeffe;
 }
 
 .spotChip.event span {

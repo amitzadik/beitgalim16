@@ -35,7 +35,6 @@
   background-color: var(--color-surface-soft);
   color: var(--color-light);
   box-shadow: var(--shadow-sm);
-  border: 2px solid var(--color-accent-soft);
 }
 
 .secondary:hover {
