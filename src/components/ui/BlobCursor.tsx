@@ -16,20 +16,20 @@ export default function BlobCursor() {
   const target = useRef({ x: 0, y: 0 });
   const current = useRef({ x: 0, y: 0 });
   const bubbles = useRef<HTMLElement[]>([]);
+  const hasPosition = useRef(false);
+  const lastMerging = useRef(false);
   const [enabled, setEnabled] = useState(false);
   const [ready, setReady] = useState(false);
   const [merging, setMerging] = useState(false);
 
   useEffect(() => {
-    const supportsCursor = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-    if (!supportsCursor || reduceMotion) {
+    if (reduceMotion) {
       return;
     }
 
     setEnabled(true);
-    document.body.classList.add("has-blob-cursor");
 
     const refreshBubbles = () => {
       bubbles.current = Array.from(
@@ -37,19 +37,28 @@ export default function BlobCursor() {
       );
     };
 
+    const setPointerPosition = (x: number, y: number) => {
+      target.current.x = x;
+      target.current.y = y;
+
+      if (!hasPosition.current) {
+        hasPosition.current = true;
+        current.current.x = x;
+        current.current.y = y;
+        setReady(true);
+      }
+    };
+
     refreshBubbles();
     const resizeObserver = new ResizeObserver(refreshBubbles);
     bubbles.current.forEach((bubble) => resizeObserver.observe(bubble));
 
     const onPointerMove = (event: PointerEvent) => {
-      target.current.x = event.clientX;
-      target.current.y = event.clientY;
+      setPointerPosition(event.clientX, event.clientY);
+    };
 
-      if (!ready) {
-        current.current.x = event.clientX;
-        current.current.y = event.clientY;
-        setReady(true);
-      }
+    const onMouseMove = (event: MouseEvent) => {
+      setPointerPosition(event.clientX, event.clientY);
     };
 
     const onVisibilityChange = () => {
@@ -58,7 +67,8 @@ export default function BlobCursor() {
       }
     };
 
-    window.addEventListener("pointermove", onPointerMove);
+    window.addEventListener("pointermove", onPointerMove, { passive: true });
+    window.addEventListener("mousemove", onMouseMove, { passive: true });
     window.addEventListener("resize", refreshBubbles);
     document.addEventListener("visibilitychange", onVisibilityChange);
 
@@ -66,7 +76,7 @@ export default function BlobCursor() {
     const animate = () => {
       const layer = layerRef.current;
 
-      if (layer) {
+      if (layer && hasPosition.current) {
         current.current.x += (target.current.x - current.current.x) * LERP;
         current.current.y += (target.current.y - current.current.y) * LERP;
 
@@ -95,6 +105,7 @@ export default function BlobCursor() {
         const dy = nearestY - y;
         const angle = Math.atan2(dy, dx);
         const bridgeLength = Math.max(0, Math.min(nearestDistance, INTERACTION_DISTANCE));
+        const isMerging = nearestDistance < MERGE_DISTANCE;
 
         layer.style.setProperty("--cursor-x", `${x}px`);
         layer.style.setProperty("--cursor-y", `${y}px`);
@@ -104,12 +115,15 @@ export default function BlobCursor() {
         layer.style.setProperty("--bridge-length", `${bridgeLength}px`);
         layer.style.setProperty("--bridge-opacity", `${influence}`);
         layer.style.setProperty("--sat-scale", `${1 - influence * 0.56}`);
-        layer.style.setProperty("--sat-x", `${22 - influence * 18}px`);
-        layer.style.setProperty("--sat-y", `${-18 + influence * 14}px`);
-        layer.style.setProperty("--sat2-x", `${-24 + influence * 17}px`);
-        layer.style.setProperty("--sat2-y", `${19 - influence * 13}px`);
+        layer.style.setProperty("--sat-x", `${24 - influence * 18}px`);
+        layer.style.setProperty("--sat-y", `${-20 + influence * 14}px`);
+        layer.style.setProperty("--sat2-x", `${-26 + influence * 17}px`);
+        layer.style.setProperty("--sat2-y", `${21 - influence * 13}px`);
 
-        setMerging(nearestDistance < MERGE_DISTANCE);
+        if (lastMerging.current !== isMerging) {
+          lastMerging.current = isMerging;
+          setMerging(isMerging);
+        }
       }
 
       frame = window.requestAnimationFrame(animate);
@@ -120,12 +134,12 @@ export default function BlobCursor() {
     return () => {
       window.cancelAnimationFrame(frame);
       window.removeEventListener("pointermove", onPointerMove);
+      window.removeEventListener("mousemove", onMouseMove);
       window.removeEventListener("resize", refreshBubbles);
       document.removeEventListener("visibilitychange", onVisibilityChange);
       resizeObserver.disconnect();
-      document.body.classList.remove("has-blob-cursor");
     };
-  }, [ready]);
+  }, []);
 
   if (!enabled) {
     return null;
