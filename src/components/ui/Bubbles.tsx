@@ -48,6 +48,7 @@ export default function Bubbles({
         <span
           key={i}
           className={styles.shape}
+          data-blob-bubble="true"
           style={
             {
               top: `${s.top}%`,
