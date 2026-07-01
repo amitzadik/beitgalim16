@@ -5,7 +5,7 @@
   gap: 0.5rem;
   padding: 0.9rem 1.9rem;
   font-size: 1.05rem;
-  font-weight: 700;
+  font-weight: 500;
   border-radius: var(--radius-pill);
   transition: transform var(--transition), box-shadow var(--transition),
     background-color var(--transition), color var(--transition);

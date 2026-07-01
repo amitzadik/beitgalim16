@@ -47,7 +47,7 @@
 .navLink {
   position: relative;
   padding: 0.5rem 0.9rem;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--color-text);
   border-radius: var(--radius-pill);
   transition: color var(--transition), background-color var(--transition);
@@ -137,7 +137,7 @@
 .mobileLink {
   display: block;
   padding: 0.85rem 0.5rem;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 1.1rem;
   color: var(--color-text);
   border-bottom: 1px solid var(--color-light);

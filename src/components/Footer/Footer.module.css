@@ -35,7 +35,7 @@
 
 .brandTitle {
   color: #fff;
-  font-weight: 800;
+  font-weight: 500;
   font-size: 1.2rem;
 }
 
@@ -52,7 +52,7 @@
 }
 
 .link {
-  font-weight: 600;
+  font-weight: 500;
   color: rgba(255, 255, 255, 0.85);
   transition: color var(--transition);
 }

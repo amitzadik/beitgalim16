@@ -1,13 +1,6 @@
 import type { Metadata, Viewport } from "next";
-import { Heebo } from "next/font/google";
+import { masada, simpler } from "./fonts";
 import "./globals.css";
-
-const heebo = Heebo({
-  subsets: ["hebrew", "latin"],
-  weight: ["400", "500", "700", "800", "900"],
-  variable: "--font-heebo",
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   title: "פסטיבל בית גלים ה־16",
@@ -42,7 +35,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="he" dir="rtl" className={heebo.variable}>
+    <html lang="he" dir="rtl" className={`${masada.variable} ${simpler.variable}`}>
       <body>{children}</body>
     </html>
   );

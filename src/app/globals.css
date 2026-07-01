@@ -15,8 +15,12 @@
   --color-sand: #f3ead7;
 
   /* טיפוגרפיה */
-  --font-sans: var(--font-heebo), "Heebo", "Segoe UI", system-ui, -apple-system,
+  --font-body: var(--font-body-simpler), "Segoe UI", system-ui, -apple-system,
     sans-serif;
+  --font-heading: var(--font-heading-masada), var(--font-body);
+  /* משקלים: 400 = Simpler Regular (פחות חשוב), 500 = Simpler Medium (חשוב) */
+  --weight-regular: 400;
+  --weight-medium: 500;
 
   /* מרווחים ועיגולים */
   --radius-sm: 12px;
@@ -52,7 +56,8 @@ body {
 body {
   background-color: var(--color-bg);
   color: var(--color-text);
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
+  font-weight: var(--weight-regular);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -67,8 +72,9 @@ h4 {
   margin: 0;
   line-height: 1.15;
   color: var(--color-primary);
-  font-weight: 800;
-  letter-spacing: -0.01em;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: 0;
 }
 
 p {
