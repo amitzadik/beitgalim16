@@ -6,18 +6,18 @@
   z-index: 0;
 }
 
-.bubble {
+.shape {
   position: absolute;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
+  /* border-radius, opacity ו---rot נקבעים inline לכל צורה בנפרד */
+  transform: translate(-50%, -50%) rotate(var(--rot, 0deg));
   animation-name: drift;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
   will-change: transform;
 }
 
-/* בועות בגווני ים על רקע בהיר */
-.light .bubble {
+/* צורות בגווני ים על רקע בהיר */
+.light .shape {
   background: radial-gradient(
     circle at 32% 30%,
     var(--color-light) 0%,
@@ -27,8 +27,8 @@
   mix-blend-mode: multiply;
 }
 
-/* בועות בהירות/לבנות על רקע כהה */
-.dark .bubble {
+/* צורות בהירות/לבנות על רקע כהה */
+.dark .shape {
   background: radial-gradient(
     circle at 32% 30%,
     rgba(255, 255, 255, 0.55) 0%,
@@ -37,21 +37,24 @@
   );
 }
 
+/* צף ומסתובב סביב הסיבוב הבסיסי של הצורה */
 @keyframes drift {
   0%,
   100% {
-    transform: translate(-50%, -50%) scale(1);
+    transform: translate(-50%, -50%) rotate(var(--rot, 0deg)) scale(1);
   }
   33% {
-    transform: translate(-46%, -58%) scale(1.08);
+    transform: translate(-46%, -58%) rotate(calc(var(--rot, 0deg) + 8deg))
+      scale(1.08);
   }
   66% {
-    transform: translate(-54%, -44%) scale(0.94);
+    transform: translate(-54%, -44%) rotate(calc(var(--rot, 0deg) - 6deg))
+      scale(0.94);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .bubble {
+  .shape {
     animation: none;
   }
 }
