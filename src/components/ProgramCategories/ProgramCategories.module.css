@@ -23,7 +23,6 @@
   padding: 3rem 2.6rem;
   background-color: var(--color-surface);
   border-radius: var(--radius-blob-1);
-  box-shadow: var(--shadow-sm);
   transition: transform var(--transition), box-shadow var(--transition),
     background-color var(--transition), border-radius var(--transition);
 }
@@ -40,11 +39,15 @@
   border-radius: var(--radius-blob-2);
 }
 
+/* בהובר כל כרטיס משנה צורה — כולל זה שכבר בצורת blob-3 בבסיס */
 .card:hover {
   transform: translateY(-8px);
-  box-shadow: var(--shadow-lg);
   background-color: var(--color-secondary);
   border-radius: var(--radius-blob-3);
+}
+
+.card:nth-child(4n + 3):hover {
+  border-radius: var(--radius-blob-1);
 }
 
 .visual {
@@ -52,15 +55,15 @@
   place-items: center;
   height: 120px;
   margin-block-end: 0.4rem;
-  border-radius: var(--radius-blob-2);
-  background-color: var(--color-light);
-  overflow: hidden;
 }
 
 .visualImg {
   width: auto;
-  height: 96px;
+  height: 100px;
   object-fit: contain;
+  /* מלבין את גרפיקת הקטגוריה כדי שתיראה על הכרטיס ללא האליפסה הלבנה */
+  filter: brightness(0) invert(1);
+  opacity: 0.92;
   transition: transform var(--transition);
 }
 
