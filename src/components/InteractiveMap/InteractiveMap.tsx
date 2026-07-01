@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
+import Bubbles from "@/components/ui/Bubbles";
 import { defaultMapSpot, mapSpots, type MapSpot } from "@/data/mapSpots";
 import IllustratedMap from "./IllustratedMap";
 import styles from "./InteractiveMap.module.css";
@@ -24,6 +25,7 @@ export default function InteractiveMap() {
 
   return (
     <section id="map" className={styles.section}>
+      <Bubbles tone="dark" count={6} />
       <Container className={styles.container}>
         <SectionHeading
           title="כל המוקדים על המפה"

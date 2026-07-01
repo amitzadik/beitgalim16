@@ -1,5 +1,6 @@
 import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
+import Bubbles from "@/components/ui/Bubbles";
 import { featuredEvents } from "@/data/events";
 import EventCard from "./EventCard";
 import styles from "./FeaturedEvents.module.css";
@@ -7,6 +8,7 @@ import styles from "./FeaturedEvents.module.css";
 export default function FeaturedEvents() {
   return (
     <section id="events" className={styles.section}>
+      <Bubbles tone="dark" count={6} />
       <Container className={styles.container}>
         <SectionHeading
           title="אירועים נבחרים"

@@ -1,12 +1,14 @@
 import Image from "next/image";
 import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
+import Bubbles from "@/components/ui/Bubbles";
 import { categories, getEventsByIds } from "@/data/events";
 import styles from "./ProgramCategories.module.css";
 
 export default function ProgramCategories() {
   return (
     <section id="program" className={styles.section}>
+      <Bubbles tone="dark" count={7} />
       <Container className={styles.container}>
         <SectionHeading
           title="כל מה שיש לבת גלים להציע"
