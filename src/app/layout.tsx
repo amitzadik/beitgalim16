@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import BlobCursor from "@/components/ui/BlobCursor";
 import { masada, simpler } from "./fonts";
 import "./globals.css";
 
@@ -36,7 +37,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="he" dir="rtl" className={`${masada.variable} ${simpler.variable}`}>
-      <body>{children}</body>
+      <body>
+        {children}
+        <BlobCursor />
+      </body>
     </html>
   );
 }
