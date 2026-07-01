@@ -16,15 +16,15 @@
   will-change: transform;
 }
 
-/* צורות בגווני ים על רקע בהיר */
+/* צורות בגווני ים על רקע כהה */
 .light .shape {
   background-color: var(--color-accent);
-  mix-blend-mode: multiply;
+  mix-blend-mode: screen;
 }
 
-/* צורות בהירות/לבנות על רקע כהה */
+/* צורות בהירות על רקע כהה */
 .dark .shape {
-  background-color: rgba(255, 255, 255, 0.42);
+  background-color: var(--color-accent-soft);
 }
 
 /* צף ומסתובב סביב הסיבוב הבסיסי של הצורה */
