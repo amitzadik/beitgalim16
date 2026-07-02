@@ -49,13 +49,11 @@
   padding: 0.5rem 0.9rem;
   font-weight: 500;
   color: var(--color-light);
-  border-radius: var(--radius-pill);
-  transition: color var(--transition), background-color var(--transition);
+  transition: color var(--transition);
 }
 
 .navLink:hover {
   color: #fff;
-  background-color: var(--color-primary-soft);
 }
 
 .menuToggle {

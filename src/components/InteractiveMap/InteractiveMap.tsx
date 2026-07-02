@@ -80,7 +80,11 @@ export default function InteractiveMap() {
                 >
                   <span aria-hidden="true">×</span>
                 </button>
-                <span className={styles.infoTag}>{getKindLabel(activeSpot.kind)}</span>
+                {activeSpot.kind === "event" && (
+                  <span className={styles.infoTag}>
+                    {getKindLabel(activeSpot.kind)}
+                  </span>
+                )}
                 <h3 className={styles.infoTitle}>
                   <span>{activeSpot.number}</span>
                   {activeSpot.title}
