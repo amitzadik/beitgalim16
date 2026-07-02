@@ -75,22 +75,22 @@
   outline: none;
 }
 
-/* החלון נפתח צמוד למרקר הפעיל (המיקום נקבע inline לפי x/y של המוקד) */
+/* החלון נפתח צמוד למרקר הפעיל, בצורה אורגנית אבסטרקטית */
 .infoCard {
   position: absolute;
   z-index: 8;
-  width: min(360px, 78vw);
-  padding: clamp(1.1rem, 2vw, 1.5rem);
+  width: min(370px, 80vw);
+  padding: 2.1rem 2.3rem;
   color: #004b77;
   background-color: #cbeffe;
-  border-radius: 28px 28px 28px 6px;
+  border-radius: 42% 58% 44% 56% / 40% 42% 58% 60%;
   animation: rise 180ms ease;
 }
 
 .infoClose {
   position: absolute;
-  inset-block-start: 0.6rem;
-  inset-inline-end: 0.6rem;
+  inset-block-start: 1rem;
+  inset-inline-end: 1.2rem;
   display: grid;
   place-items: center;
   width: 1.9rem;
