@@ -114,7 +114,6 @@ export default function Bubbles({
               {
                 width: `${s.size}px`,
                 height: `${s.size}px`,
-                opacity: s.opacity,
                 borderRadius: s.radius,
                 animationDelay: `${s.delay}s`,
                 animationDuration: `${s.dur}s`,
