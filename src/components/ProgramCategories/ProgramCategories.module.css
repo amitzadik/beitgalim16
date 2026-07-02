@@ -21,8 +21,11 @@
 .card {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 0.8rem;
-  padding: 3.6rem 3rem;
+  min-height: 460px;
+  /* ריפוד תחתון גדול יותר — שומר את הטקסט במרכז הרחב של הצורה */
+  padding: 3.4rem 3.2rem 4.4rem;
   background-color: var(--color-surface);
   border-radius: var(--radius-blob-1);
   transition: transform var(--transition), box-shadow var(--transition),
@@ -80,7 +83,6 @@
 
 .description {
   color: var(--color-text-muted);
-  flex: 1;
 }
 
 .examples {
