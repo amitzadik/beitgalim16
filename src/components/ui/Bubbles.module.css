@@ -26,14 +26,29 @@
   will-change: transform;
 }
 
-/* הצורה הנראית — מתעוותת ברציפות (morph) */
+/* הצורה הנראית — נעה מעצמה (drift) ומתעוותת ברציפות (morph) */
 .blob {
   position: absolute;
-  transform: translate(-50%, -50%) rotate(var(--rot, 0deg));
-  animation-name: morph;
+  animation-name: drift, morph;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
-  will-change: border-radius;
+  will-change: transform, border-radius;
+}
+
+/* תנועה עצמאית עדינה של הצורה סביב מקומה */
+@keyframes drift {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) rotate(var(--rot, 0deg)) scale(1);
+  }
+  33% {
+    transform: translate(-44%, -58%) rotate(calc(var(--rot, 0deg) + 7deg))
+      scale(1.06);
+  }
+  66% {
+    transform: translate(-57%, -43%) rotate(calc(var(--rot, 0deg) - 6deg))
+      scale(0.95);
+  }
 }
 
 /* הצבע השני הכי כהה בפלטה */

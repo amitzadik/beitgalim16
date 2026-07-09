@@ -1,7 +1,7 @@
 // כל הנתונים של הפסטיבל מרוכזים כאן: אירועים, מוקדים על המפה וקטגוריות תוכנית.
 // קובץ זה הוא "מקור האמת" של האתר — שינוי תוכן נעשה כאן בלבד.
 
-export type DayLabel = "יום חמישי" | "יום שבת";
+export type DayLabel = "יום חמישי" | "יום שישי" | "יום שבת";
 
 export interface FestivalEvent {
   id: string;
@@ -106,6 +106,39 @@ export const events: FestivalEvent[] = [
     locationName: "טיילת בת גלים",
     description:
       "מסע מוזיקלי מלווה בסיפורים על המוזיקה הישראלית, בהנחיית יואב קוטנר.",
+    featured: true,
+  },
+  {
+    id: "tal-cohen-shalo",
+    title: "טל כהן-שלו",
+    performer: "הופעה חיה",
+    day: "יום חמישי",
+    time: "20:00",
+    locationId: "bar-galim",
+    locationName: "בר גלים",
+    description: "מופע ערב אינטימי בבר גלים.",
+    featured: true,
+  },
+  {
+    id: "tomer-yishayahu",
+    title: "תומר ישעיהו",
+    performer: "סולו אינטימי",
+    day: "יום שישי",
+    time: "15:00",
+    locationId: "merkaz-kehilati",
+    locationName: "מרכז קהילתי",
+    description: "מופע סולו אינטימי במרכז הקהילתי.",
+    featured: true,
+  },
+  {
+    id: "or-ya-sudmi",
+    title: "אור-יה סודמי",
+    performer: "הופעה חיה",
+    day: "יום שבת",
+    time: "16:30",
+    locationId: "bar-galim",
+    locationName: "בר גלים",
+    description: "הופעה בבר גלים לקראת ערב הסיום.",
     featured: true,
   },
   {
