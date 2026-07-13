@@ -27,14 +27,17 @@
 }
 
 .dates {
+  width: min(100%, 48ch);
   font-family: var(--font-heading);
   font-size: clamp(1.4rem, 3.4vw, 2.1rem);
   font-weight: 700;
   color: var(--color-light);
   letter-spacing: 0.01em;
+  text-align: right;
 }
 
 .subtitle {
+  width: min(100%, 48ch);
   max-width: 48ch;
   font-size: clamp(1.1rem, 3vw, 1.45rem);
   color: var(--color-text-muted);
@@ -43,10 +46,11 @@
 }
 
 .facts {
+  width: min(100%, 48ch);
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 0.6rem 1.4rem;
   margin: 0;
   margin-block-start: 1rem;
