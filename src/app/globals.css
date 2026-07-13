@@ -61,11 +61,13 @@ body {
 }
 
 body {
+  direction: rtl;
   background-color: var(--color-bg);
   color: var(--color-text);
   font-family: var(--font-body);
   font-weight: var(--weight-regular);
   line-height: 1.6;
+  text-align: right;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
@@ -84,12 +86,14 @@ h4 {
   letter-spacing: 0;
   /* מונע "מילים יתומות" בכותרות ומאזן שורות */
   text-wrap: balance;
+  text-align: right;
 }
 
 p {
   margin: 0;
   /* מונע מילה בודדת בשורה אחרונה */
   text-wrap: pretty;
+  text-align: right;
 }
 
 a {
