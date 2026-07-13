@@ -7,14 +7,14 @@
 }
 
 .center {
-  align-items: center;
-  text-align: center;
+  align-items: flex-start;
+  text-align: right;
   margin-inline: auto;
 }
 
 .start {
   align-items: flex-start;
-  text-align: start;
+  text-align: right;
 }
 
 .title {
