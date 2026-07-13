@@ -1,6 +1,6 @@
 .section {
   position: relative;
-  padding-block: var(--section-padding);
+  padding-block: var(--section-padding) calc(var(--section-padding) + clamp(1.5rem, 4vw, 3rem));
   overflow: hidden;
 }
 
@@ -81,31 +81,32 @@
   position: absolute;
   z-index: 8;
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  width: min(360px, 80vw);
-  min-height: 220px;
-  padding: 3rem 2.7rem 2.4rem;
+  width: min(430px, 86vw);
+  min-height: 250px;
+  padding: 3.15rem 3rem 2.7rem;
   color: #004b77;
   background-color: #6dcff6;
   border-radius: 38% 46% 40% 44% / 44% 38% 46% 42%;
+  direction: rtl;
   text-align: right;
   animation: rise 180ms ease;
 }
 
 .infoClose {
   position: absolute;
-  inset-block-start: 1.5rem;
-  inset-inline-end: 1.8rem;
+  inset-block-start: 1.55rem;
+  inset-inline-end: 2rem;
   display: grid;
   place-items: center;
-  width: 1.9rem;
-  height: 1.9rem;
+  width: 2rem;
+  height: 2rem;
   color: #cbeffe;
   background-color: #004b77;
   border: 0;
   border-radius: 999px;
-  font-size: 1.3rem;
+  font-size: 1.32rem;
   line-height: 1;
   transition: transform 180ms ease, background-color 180ms ease;
 }
@@ -116,60 +117,88 @@
   background-color: #008ab5;
 }
 
-/* תווית סוג המוקד כטקסט רגיל (ללא צורת גלולה) */
-.infoTag {
-  display: block;
-  margin-block-end: 0.5rem;
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.03em;
-  color: #008ab5;
-}
-
-.infoTitle {
+.infoInner {
   display: flex;
-  align-items: center;
-  gap: 0.65rem;
-  margin: 0;
-  color: #004b77;
-  font-size: clamp(1.35rem, 2vw, 1.85rem);
-  line-height: 1.15;
+  flex-direction: column;
+  justify-content: center;
+  width: min(100%, 31ch);
+  margin-inline: auto;
+  padding-block-start: 0.35rem;
   text-align: right;
 }
 
-.infoTitle span {
+.infoHeader {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: start;
+  gap: 0.8rem;
+  width: 100%;
+}
+
+.infoNumber {
   display: grid;
   place-items: center;
-  flex: 0 0 auto;
-  width: 2rem;
-  height: 2rem;
+  width: 2.1rem;
+  height: 2.1rem;
   color: #cbeffe;
   background-color: #004b77;
   border-radius: 999px;
   font-family: var(--font-body);
-  font-size: 0.92rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.infoTextColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  min-width: 0;
+  text-align: right;
+}
+
+/* תווית סוג המוקד כטקסט רגיל (ללא צורת גלולה) */
+.infoTag {
+  display: block;
+  margin: 0;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: #008ab5;
+  text-align: right;
+}
+
+.infoTitle {
+  margin: 0;
+  color: #004b77;
+  font-size: clamp(1.38rem, 2vw, 1.9rem);
+  line-height: 1.15;
+  text-align: right;
 }
 
 .infoAddress {
-  margin-block: 0.7rem 0;
+  margin: 0;
   color: #005f8e;
   font-weight: 700;
+  text-align: right;
 }
 
 .infoEvents {
   display: flex;
   flex-direction: column;
   gap: 0.55rem;
-  margin: 0.95rem 0 0;
-  padding: 0.95rem 0 0;
+  width: 100%;
+  margin: 0.9rem 0 0;
+  padding: 0.9rem 0 0;
   list-style: none;
+  text-align: right;
 }
 
 .infoEvents li {
   position: relative;
   padding-inline-start: 0.9rem;
   color: #004b77;
-  font-size: 0.95rem;
+  font-size: 0.96rem;
   line-height: 1.45;
   text-align: right;
 }
@@ -211,6 +240,12 @@
   }
 
   .infoCard {
-    width: 320px;
+    width: 340px;
+    min-height: 245px;
+    padding: 3rem 2.45rem 2.45rem;
+  }
+
+  .infoInner {
+    width: min(100%, 28ch);
   }
 }
