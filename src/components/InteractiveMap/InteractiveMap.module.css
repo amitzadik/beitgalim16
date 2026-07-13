@@ -48,6 +48,7 @@
   background: transparent;
   /* מסתיר את המספר שברכיב עצמו — המספר כבר מודפס על התמונה */
   color: transparent;
+  font-family: var(--font-body);
   font-size: 0;
   transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
 }
@@ -79,18 +80,23 @@
 .infoCard {
   position: absolute;
   z-index: 8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   width: min(360px, 80vw);
-  padding: 2.2rem 2.4rem;
+  min-height: 220px;
+  padding: 3rem 2.7rem 2.4rem;
   color: #004b77;
-  background-color: #cbeffe;
+  background-color: #6dcff6;
   border-radius: 38% 46% 40% 44% / 44% 38% 46% 42%;
+  text-align: right;
   animation: rise 180ms ease;
 }
 
 .infoClose {
   position: absolute;
-  inset-block-start: 1rem;
-  inset-inline-end: 1.2rem;
+  inset-block-start: 1.5rem;
+  inset-inline-end: 1.8rem;
   display: grid;
   place-items: center;
   width: 1.9rem;
@@ -128,6 +134,7 @@
   color: #004b77;
   font-size: clamp(1.35rem, 2vw, 1.85rem);
   line-height: 1.15;
+  text-align: right;
 }
 
 .infoTitle span {
@@ -139,6 +146,7 @@
   color: #cbeffe;
   background-color: #004b77;
   border-radius: 999px;
+  font-family: var(--font-body);
   font-size: 0.92rem;
 }
 
@@ -163,6 +171,7 @@
   color: #004b77;
   font-size: 0.95rem;
   line-height: 1.45;
+  text-align: right;
 }
 
 .infoEvents li::before {
