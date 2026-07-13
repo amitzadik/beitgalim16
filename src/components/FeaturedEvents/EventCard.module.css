@@ -5,11 +5,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 1.08rem;
   height: 100%;
   min-height: 320px;
   /* ריפוד גדול כדי שכל הטקסט יישאר בתוך הצורה האורגנית */
-  padding: 3.8rem 3.4rem;
+  padding: 3.8rem 3.25rem;
   background-color: var(--color-surface);
   border-radius: var(--radius-blob-1);
   text-align: right;
@@ -44,54 +44,58 @@
   display: inline-flex;
   align-items: baseline;
   justify-content: flex-start;
-  gap: 0.5rem;
-  width: min(100%, 25ch);
+  gap: 0.55rem;
+  width: min(100%, 26ch);
   color: var(--color-light);
+  direction: rtl;
   text-align: right;
 }
 
 .day {
-  font-size: 0.94rem;
+  font-size: 1.03rem;
   font-weight: 500;
 }
 
 .time {
-  font-size: 1.16rem;
+  font-size: 1.28rem;
   font-weight: 500;
 }
 
 .body {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  width: min(100%, 25ch);
+  gap: 0.55rem;
+  width: min(100%, 26ch);
+  direction: rtl;
   text-align: right;
 }
 
 .title {
-  font-size: 1.43rem;
+  font-size: 1.58rem;
   color: var(--color-light);
 }
 
 .performer {
+  font-size: 1.06rem;
   font-weight: 500;
   color: var(--color-accent-soft);
 }
 
 .description {
   color: var(--color-text-muted);
-  font-size: 0.98rem;
+  font-size: 1.04rem;
 }
 
 .location {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  width: min(100%, 25ch);
+  gap: 0.45rem;
+  width: min(100%, 26ch);
   color: var(--color-text-muted);
+  direction: rtl;
   font-weight: 500;
-  font-size: 0.92rem;
-  padding-block-start: 0.4rem;
+  font-size: 1rem;
+  padding-block-start: 0.35rem;
   text-align: right;
 }
 
