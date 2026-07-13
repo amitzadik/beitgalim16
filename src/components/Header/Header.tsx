@@ -21,7 +21,7 @@ export default function Header() {
       <div className={styles.inner}>
         <a href="#hero" className={styles.brand} aria-label="פסטיבל בית גלים ה־16 — לראש העמוד">
           <Image
-            src="/images/logo1.png"
+            src="/images/littlelogo.png"
             alt="פסטיבל בית גלים ה־16"
             width={709}
             height={709}
