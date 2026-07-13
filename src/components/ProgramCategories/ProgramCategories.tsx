@@ -24,7 +24,9 @@ export default function ProgramCategories() {
                     alt=""
                     width={709}
                     height={709}
-                    className={styles.visualImg}
+                    className={`${styles.visualImg} ${
+                      category.id === "family" ? styles.familyImg : ""
+                    }`}
                     aria-hidden="true"
                   />
                 </div>
