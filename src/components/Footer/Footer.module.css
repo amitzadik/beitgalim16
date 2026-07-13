@@ -7,10 +7,30 @@
 /* רוחב מלא עם ריפוד 20px — מיושר ללוגו ולסרגל העליון */
 .inner {
   display: flex;
-  flex-direction: column;
-  gap: 1.4rem;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: clamp(2rem, 8vw, 6rem);
   padding-inline: 20px;
+  direction: rtl;
   text-align: right;
+}
+
+.eventColumn,
+.metaColumn {
+  min-width: 0;
+  text-align: right;
+}
+
+.eventColumn {
+  max-width: 38ch;
+}
+
+.metaColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  max-width: 42ch;
+  margin-inline-start: auto;
 }
 
 .brand {
@@ -47,4 +67,21 @@
 .copyright {
   font-size: 0.88rem;
   color: rgba(203, 239, 254, 0.6);
+}
+
+@media (max-width: 760px) {
+  .inner {
+    flex-direction: column;
+    gap: 1.4rem;
+  }
+
+  .eventColumn,
+  .metaColumn {
+    max-width: none;
+    width: 100%;
+  }
+
+  .metaColumn {
+    margin-inline-start: 0;
+  }
 }
