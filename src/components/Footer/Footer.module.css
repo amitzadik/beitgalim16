@@ -10,19 +10,13 @@
   flex-direction: column;
   gap: 1.4rem;
   padding-inline: 20px;
+  text-align: right;
 }
 
 .brand {
   display: flex;
   align-items: center;
   gap: 1rem;
-}
-
-.logo {
-  width: auto;
-  height: 62px;
-  object-fit: contain;
-  flex-shrink: 0;
 }
 
 .brandTitle {
@@ -35,6 +29,19 @@
   font-size: 0.92rem;
   color: rgba(203, 239, 254, 0.72);
   max-width: 36ch;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  color: rgba(203, 239, 254, 0.82);
+  font-size: 0.95rem;
+  text-align: right;
+}
+
+.info span {
+  display: inline-block;
 }
 
 .copyright {
