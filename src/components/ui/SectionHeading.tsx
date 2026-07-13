@@ -10,7 +10,7 @@ interface SectionHeadingProps {
 export default function SectionHeading({
   title,
   description,
-  align = "center",
+  align = "start",
 }: SectionHeadingProps) {
   return (
     <div className={`${styles.heading} ${styles[align]}`}>
