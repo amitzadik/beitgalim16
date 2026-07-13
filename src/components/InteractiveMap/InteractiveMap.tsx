@@ -13,7 +13,7 @@ function getKindLabel(kind: MapSpot["kind"]) {
 
 function getCardTransform(spot: MapSpot) {
   const horizontal = spot.x > 68 ? "-100%" : spot.x < 24 ? "0%" : "-50%";
-  const vertical = spot.y > 54 ? "calc(-100% - 18px)" : "18px";
+  const vertical = spot.y > 42 ? "calc(-100% - 18px)" : "18px";
 
   return `translate(${horizontal}, ${vertical})`;
 }
