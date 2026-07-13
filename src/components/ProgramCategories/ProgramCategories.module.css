@@ -12,7 +12,7 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 270px), 1fr));
-  gap: clamp(1.2rem, 2.4vw, 2rem);
+  gap: calc(clamp(1.2rem, 2.4vw, 2rem) + 20px);
   /* כל כרטיס בגובה טבעי — מותר ש-4 הצורות יהיו שונות */
   align-items: start;
 }
@@ -21,13 +21,15 @@
 .card {
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
   gap: 0.8rem;
-  min-height: 460px;
+  min-height: 500px;
   /* ריפוד תחתון גדול יותר — שומר את הטקסט במרכז הרחב של הצורה */
   padding: 3.4rem 3.2rem 4.4rem;
   background-color: var(--color-surface);
   border-radius: var(--radius-blob-1);
+  text-align: right;
   transition: transform var(--transition), box-shadow var(--transition),
     background-color var(--transition), border-radius var(--transition);
 }
@@ -58,13 +60,13 @@
 .visual {
   display: grid;
   place-items: center;
-  height: 120px;
+  height: 144px;
   margin-block-end: 0.4rem;
 }
 
 .visualImg {
   width: auto;
-  height: 100px;
+  height: 120px;
   object-fit: contain;
   /* מלבין את גרפיקת הקטגוריה כדי שתיראה על הכרטיס ללא האליפסה הלבנה */
   filter: brightness(0) invert(1);
@@ -76,18 +78,17 @@
   transform: scale(1.08) rotate(-2deg);
 }
 
-.title {
-  font-size: 1.4rem;
-  color: var(--color-light);
-}
-
 .description {
   color: var(--color-text-muted);
+  width: min(100%, 25ch);
+  text-align: right;
 }
 
 .examples {
+  width: min(100%, 25ch);
   margin-block-start: 0.5rem;
   padding-block-start: 1rem;
+  text-align: right;
 }
 
 .examples ul {
@@ -101,6 +102,7 @@
   align-items: flex-start;
   gap: 0.55rem;
   font-size: 0.95rem;
+  text-align: right;
 }
 
 .example strong {
