@@ -11,6 +11,13 @@ function getKindLabel(kind: MapSpot["kind"]) {
   return kind === "event" ? "מוקד אירועים" : "בית פתוח";
 }
 
+function getCardTransform(spot: MapSpot) {
+  const horizontal = spot.x > 68 ? "-100%" : spot.x < 24 ? "0%" : "-50%";
+  const vertical = spot.y > 54 ? "calc(-100% - 18px)" : "18px";
+
+  return `translate(${horizontal}, ${vertical})`;
+}
+
 export default function InteractiveMap() {
   const [activeId, setActiveId] = useState(defaultMapSpot.id);
   const [isCardOpen, setIsCardOpen] = useState(true);
@@ -63,11 +70,9 @@ export default function InteractiveMap() {
               <aside
                 className={`${styles.infoCard} ${styles[activeSpot.kind]}`}
                 style={{
-                  left: `${activeSpot.x}%`,
-                  top: `${activeSpot.y}%`,
-                  transform: `translate(${
-                    activeSpot.x > 50 ? "-100%" : "0%"
-                  }, ${activeSpot.y > 50 ? "calc(-100% - 16px)" : "16px"})`,
+                  left: `${Math.min(Math.max(activeSpot.x, 12), 88)}%`,
+                  top: `${Math.min(Math.max(activeSpot.y, 14), 84)}%`,
+                  transform: getCardTransform(activeSpot),
                 }}
                 aria-live="polite"
                 aria-label={`פרטי מוקד: ${activeSpot.title}`}
@@ -80,23 +85,31 @@ export default function InteractiveMap() {
                 >
                   <span aria-hidden="true">×</span>
                 </button>
-                {activeSpot.kind === "event" && (
-                  <span className={styles.infoTag}>
-                    {getKindLabel(activeSpot.kind)}
-                  </span>
-                )}
-                <h3 className={styles.infoTitle}>
-                  <span>{activeSpot.number}</span>
-                  {activeSpot.title}
-                </h3>
-                {activeSpot.address && <p className={styles.infoAddress}>{activeSpot.address}</p>}
-                <ul className={styles.infoEvents}>
-                  {activeSpot.events.map((event) => (
-                    <li key={event} className={styles.infoEvent}>
-                      {event}
-                    </li>
-                  ))}
-                </ul>
+
+                <div className={styles.infoInner}>
+                  <div className={styles.infoHeader}>
+                    <span className={styles.infoNumber}>{activeSpot.number}</span>
+                    <div className={styles.infoTextColumn}>
+                      {activeSpot.kind === "event" && (
+                        <span className={styles.infoTag}>
+                          {getKindLabel(activeSpot.kind)}
+                        </span>
+                      )}
+                      <h3 className={styles.infoTitle}>{activeSpot.title}</h3>
+                      {activeSpot.address && (
+                        <p className={styles.infoAddress}>{activeSpot.address}</p>
+                      )}
+                    </div>
+                  </div>
+
+                  <ul className={styles.infoEvents}>
+                    {activeSpot.events.map((event) => (
+                      <li key={event} className={styles.infoEvent}>
+                        {event}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </aside>
             )}
           </div>
