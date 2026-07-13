@@ -29,7 +29,6 @@ export default function ProgramCategories() {
                   />
                 </div>
 
-                <h3 className={styles.title}>{category.title}</h3>
                 <p className={styles.description}>{category.description}</p>
 
                 <div className={styles.examples}>
