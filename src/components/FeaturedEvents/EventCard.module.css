@@ -3,6 +3,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
   gap: 1rem;
   height: 100%;
@@ -11,6 +12,7 @@
   padding: 3.8rem 3.4rem;
   background-color: var(--color-surface);
   border-radius: var(--radius-blob-1);
+  text-align: right;
   transition: transform var(--transition), box-shadow var(--transition),
     background-color var(--transition), border-radius var(--transition);
 }
@@ -41,18 +43,20 @@
 .timeBadge {
   display: inline-flex;
   align-items: baseline;
+  justify-content: flex-start;
   gap: 0.5rem;
-  align-self: flex-start;
+  width: min(100%, 25ch);
   color: var(--color-light);
+  text-align: right;
 }
 
 .day {
-  font-size: 0.85rem;
+  font-size: 0.94rem;
   font-weight: 500;
 }
 
 .time {
-  font-size: 1.05rem;
+  font-size: 1.16rem;
   font-weight: 500;
 }
 
@@ -60,10 +64,12 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  width: min(100%, 25ch);
+  text-align: right;
 }
 
 .title {
-  font-size: 1.3rem;
+  font-size: 1.43rem;
   color: var(--color-light);
 }
 
@@ -81,10 +87,12 @@
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
+  width: min(100%, 25ch);
   color: var(--color-text-muted);
   font-weight: 500;
   font-size: 0.92rem;
   padding-block-start: 0.4rem;
+  text-align: right;
 }
 
 .location svg {
