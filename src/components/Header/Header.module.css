@@ -18,7 +18,7 @@
   justify-content: space-between;
   gap: 1rem;
   /* הלוגו במרחק 20px מקצה העמוד (עליון וצדדי) */
-  padding: 20px;
+  padding: 18px 20px;
 }
 
 .brand {
@@ -29,7 +29,7 @@
 
 .logo {
   width: auto;
-  height: 62px;
+  height: 74px;
   object-fit: contain;
   transition: transform var(--transition);
 }
@@ -132,5 +132,9 @@
 
   .menuToggle {
     display: inline-flex;
+  }
+
+  .logo {
+    height: 68px;
   }
 }
