@@ -12,6 +12,9 @@ export default function EventCard({ event }: EventCardProps) {
     <article className={styles.card}>
       <div className={styles.timeBadge}>
         <span className={styles.day}>{noOrphans(event.day)}</span>
+        <span className={styles.timeSeparator} aria-hidden="true">
+          /
+        </span>
         <span className={styles.time}>{event.time}</span>
       </div>
 

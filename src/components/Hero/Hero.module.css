@@ -1,7 +1,7 @@
 .hero {
   position: relative;
   overflow: hidden;
-  padding-block: 79px clamp(4.8rem, 8vw, 7rem);
+  padding-block: 108px clamp(4.8rem, 8vw, 7rem);
 }
 
 .inner {
@@ -12,8 +12,8 @@
   align-items: center;
   text-align: right;
   gap: 0;
-  width: min(100%, 624px);
-  max-width: 624px;
+  width: min(100%, 643px);
+  max-width: 643px;
   padding-inline: 0;
 }
 
@@ -21,17 +21,21 @@
   margin: 0;
   display: flex;
   justify-content: center;
+  width: 100%;
+  padding-block-start: 21px;
 }
 
 .logo {
-  width: min(100%, 624px);
+  width: min(103.5%, 665px);
+  max-width: none;
   height: auto;
   animation: bob 6s ease-in-out infinite;
 }
 
 .dates {
   width: min(100%, 176px);
-  margin-block-start: -20px;
+  margin-block-start: -15px;
+  transform: translateX(-10px);
   font-family: var(--font-heading);
   font-size: clamp(1.8rem, 1.95vw, 2.1rem);
   line-height: 1.6;
@@ -44,6 +48,7 @@
 .subtitle {
   width: min(100%, 318px);
   margin-block-start: 22px;
+  transform: translateX(-21px);
   max-width: 318px;
   font-size: 20px;
   line-height: 1.4336;
@@ -61,6 +66,7 @@
   gap: 0.6rem 20px;
   margin: 0;
   margin-block-start: 22px;
+  transform: translateX(-10px);
 }
 
 .fact {
@@ -105,19 +111,25 @@
 
 @media (max-width: 760px) {
   .hero {
-    padding-block-start: 72px;
+    padding-block-start: 86px;
   }
 
   .inner {
-    max-width: min(100%, 624px);
+    max-width: min(100%, 643px);
   }
 
   .logo {
-    width: min(100vw, 624px);
+    width: min(100vw, 665px);
   }
 
   .dates {
     margin-block-start: -16px;
     font-size: clamp(1.55rem, 7vw, 2.1rem);
+    transform: none;
+  }
+
+  .subtitle,
+  .facts {
+    transform: none;
   }
 }

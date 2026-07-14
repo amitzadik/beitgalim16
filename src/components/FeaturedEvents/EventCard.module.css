@@ -5,7 +5,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 4px;
+  gap: 8px;
   width: min(100%, var(--card-width, 360px));
   min-height: var(--card-height, 360px);
   /* ריפוד גדול כדי שכל הטקסט יישאר בתוך הצורה האורגנית */
@@ -58,7 +58,7 @@
 }
 
 .card:nth-child(7) {
-  --text-width: 237px;
+  --text-width: 187px;
   transform: translateY(-83px);
 }
 
@@ -94,24 +94,24 @@
 .timeBadge {
   display: inline-flex;
   align-items: baseline;
-  justify-content: flex-end;
-  gap: 0.35rem;
+  justify-content: center;
+  gap: 0.28rem;
   width: min(100%, var(--text-width));
   color: var(--color-light);
   direction: rtl;
-  text-align: right;
+  text-align: center;
 }
 
-.day {
-  font-size: 20px;
-  line-height: 1.4336;
-  font-weight: 500;
-}
-
+.day,
+.timeSeparator,
 .time {
   font-size: 20px;
   line-height: 1.4336;
   font-weight: 500;
+}
+
+.timeSeparator {
+  display: inline-block;
 }
 
 .body {
