@@ -7,12 +7,12 @@
 .container {
   position: relative;
   z-index: 1;
-  max-width: 1710px;
+  max-width: 1840px;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 400px));
+  grid-template-columns: repeat(4, minmax(0, 420px));
   justify-content: center;
   gap: 20px;
   /* כל כרטיס בגובה טבעי — מותר ש-4 הצורות יהיו שונות */
@@ -25,13 +25,14 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 18px;
   min-height: 560px;
-  width: min(100%, 400px);
-  padding: 60px;
+  width: min(100%, 420px);
+  padding: 64px 82px 74px;
   background-color: var(--color-surface);
   border-radius: var(--radius-blob-1);
   text-align: right;
+  overflow: hidden;
   transition: transform var(--transition), box-shadow var(--transition),
     background-color var(--transition), border-radius var(--transition);
 }
@@ -102,19 +103,22 @@
 
 .description {
   color: var(--color-text-muted);
-  width: min(100%, 280px);
+  width: min(100%, 236px);
   font-size: 20px;
   line-height: 1.1;
   direction: rtl;
   text-align: right;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
 }
 
 .examples {
-  width: min(100%, 280px);
+  width: min(100%, 236px);
   margin-block-start: 0;
   padding-block-start: 0;
   direction: rtl;
   text-align: right;
+  overflow-wrap: anywhere;
 }
 
 .examples ul {
@@ -132,12 +136,16 @@
   line-height: 1.4336;
   direction: rtl;
   text-align: right;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
 }
 
 .example strong {
   display: block;
   color: var(--color-light);
   font-weight: 500;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
 }
 
 .exampleMeta {
@@ -146,29 +154,35 @@
   font-size: 16px;
   line-height: 1.6;
   color: var(--color-text-muted);
+  overflow-wrap: anywhere;
 }
 
 @media (max-width: 700px) {
   .card {
     min-height: 560px;
-    padding: 60px;
+    padding: 64px 72px 74px;
   }
 }
 
 @media (max-width: 460px) {
   .card {
-    width: min(100%, 400px);
-    padding: 52px;
+    width: min(100%, 420px);
+    padding: 60px 64px 70px;
   }
 
   .visual {
-    width: min(100%, 280px);
+    width: min(100%, 260px);
+  }
+
+  .description,
+  .examples {
+    width: min(100%, 230px);
   }
 }
 
-@media (max-width: 1500px) {
+@media (max-width: 1760px) {
   .grid {
-    grid-template-columns: repeat(2, minmax(0, 400px));
+    grid-template-columns: repeat(2, minmax(0, 420px));
   }
 }
 
