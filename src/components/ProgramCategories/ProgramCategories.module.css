@@ -7,12 +7,12 @@
 .container {
   position: relative;
   z-index: 1;
-  max-width: 1840px;
+  max-width: 1764px;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 420px));
+  grid-template-columns: repeat(4, minmax(300px, 400px));
   justify-content: center;
   gap: 20px;
   /* כל כרטיס בגובה טבעי — מותר ש-4 הצורות יהיו שונות */
@@ -27,14 +27,18 @@
   justify-content: center;
   gap: 18px;
   min-height: 560px;
-  width: min(100%, 420px);
-  padding: 64px 82px 74px;
+  width: 100%;
+  padding: 67px 60px;
   background-color: var(--color-surface);
   border-radius: var(--radius-blob-1);
   text-align: right;
   overflow: hidden;
   transition: transform var(--transition), box-shadow var(--transition),
     background-color var(--transition), border-radius var(--transition);
+}
+
+.card:nth-child(odd) {
+  margin-block-start: 283px;
 }
 
 .card:nth-child(4n + 2) {
@@ -64,15 +68,15 @@
   display: grid;
   place-items: center;
   width: 280px;
-  height: 188px;
-  margin-block-end: 0;
+  height: 204px;
+  margin-block-end: -6px;
 }
 
 .visualImg {
   width: auto;
-  height: 188px;
+  height: 204px;
   max-width: 280px;
-  max-height: 188px;
+  max-height: 204px;
   object-fit: contain;
   /* מלבין את גרפיקת הקטגוריה כדי שתיראה על הכרטיס ללא האליפסה הלבנה */
   filter: brightness(0) invert(1);
@@ -81,20 +85,20 @@
 }
 
 .familyImg {
-  width: 188px;
-  height: 188px;
+  width: 203px;
+  height: 203px;
 }
 
 .performancesImg {
   width: 280px;
   height: auto;
-  max-height: 188px;
+  max-height: 204px;
 }
 
 .open-housesImg {
   width: 260px;
   height: auto;
-  max-height: 188px;
+  max-height: 204px;
 }
 
 .card:hover .visualImg {
@@ -103,7 +107,7 @@
 
 .description {
   color: var(--color-text-muted);
-  width: min(100%, 236px);
+  width: min(100%, 187px);
   font-size: 20px;
   line-height: 1.1;
   direction: rtl;
@@ -113,7 +117,7 @@
 }
 
 .examples {
-  width: min(100%, 236px);
+  width: min(100%, 187px);
   margin-block-start: 0;
   padding-block-start: 0;
   direction: rtl;
@@ -160,29 +164,33 @@
 @media (max-width: 700px) {
   .card {
     min-height: 560px;
-    padding: 64px 72px 74px;
+    padding: 67px 60px;
   }
 }
 
 @media (max-width: 460px) {
   .card {
-    width: min(100%, 420px);
-    padding: 60px 64px 70px;
+    width: min(100%, 400px);
+    padding: 62px 54px;
   }
 
   .visual {
-    width: min(100%, 260px);
+    width: min(100%, 280px);
   }
 
   .description,
   .examples {
-    width: min(100%, 230px);
+    width: min(100%, 187px);
   }
 }
 
-@media (max-width: 1760px) {
+@media (max-width: 1380px) {
   .grid {
-    grid-template-columns: repeat(2, minmax(0, 420px));
+    grid-template-columns: repeat(2, minmax(0, 400px));
+  }
+
+  .card:nth-child(odd) {
+    margin-block-start: 0;
   }
 }
 
