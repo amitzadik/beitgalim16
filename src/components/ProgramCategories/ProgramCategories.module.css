@@ -102,16 +102,18 @@
 
 .description {
   color: var(--color-text-muted);
-  width: min(100%, 142px);
+  width: min(100%, 280px);
   font-size: 20px;
   line-height: 1.1;
+  direction: rtl;
   text-align: right;
 }
 
 .examples {
-  width: min(100%, 128px);
+  width: min(100%, 280px);
   margin-block-start: 0;
   padding-block-start: 0;
+  direction: rtl;
   text-align: right;
 }
 
@@ -119,14 +121,16 @@
   display: flex;
   flex-direction: column;
   gap: 9.6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .example {
-  display: flex;
-  align-items: flex-start;
-  gap: 8.8px;
+  display: block;
   font-size: 20px;
   line-height: 1.4336;
+  direction: rtl;
   text-align: right;
 }
 
@@ -142,15 +146,6 @@
   font-size: 16px;
   line-height: 1.6;
   color: var(--color-text-muted);
-}
-
-.exampleDot {
-  flex-shrink: 0;
-  width: 8px;
-  height: 8px;
-  margin-block-start: 7px;
-  border-radius: 50%;
-  background-color: var(--color-accent-soft);
 }
 
 @media (max-width: 700px) {

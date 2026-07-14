@@ -10,7 +10,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: right;
+  text-align: center;
   gap: 0;
   width: min(100%, 643px);
   max-width: 643px;
@@ -35,54 +35,49 @@
 .dates {
   width: min(100%, 176px);
   margin-block-start: -15px;
-  transform: translateX(-10px);
   font-family: var(--font-heading);
   font-size: clamp(1.8rem, 1.95vw, 2.1rem);
   line-height: 1.6;
   font-weight: 700;
   color: #ddf2fc;
   letter-spacing: 0.01em;
-  text-align: right;
+  text-align: center;
+  text-wrap: balance;
+  white-space: normal;
 }
 
 .subtitle {
-  width: min(100%, 318px);
+  width: min(100%, 360px);
   margin-block-start: 22px;
-  transform: translateX(-21px);
-  max-width: 318px;
+  max-width: calc(100vw - 2rem);
   font-size: 20px;
   line-height: 1.4336;
   color: var(--color-text-muted);
   font-weight: 500;
-  text-align: right;
+  text-align: center;
+  text-wrap: balance;
+  white-space: normal;
+}
+
+.subtitle span {
+  display: block;
 }
 
 .facts {
-  width: min(100%, 238px);
+  width: min(100%, 360px);
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   gap: 0.6rem 20px;
   margin: 0;
   margin-block-start: 22px;
-  transform: translateX(-10px);
+  text-align: center;
+  text-wrap: balance;
 }
 
 .fact {
   position: relative;
-}
-
-.fact + .fact::before {
-  content: "";
-  position: absolute;
-  inset-inline-start: -0.8rem;
-  inset-block-start: 50%;
-  width: 5px;
-  height: 5px;
-  transform: translateY(-50%);
-  border-radius: 50%;
-  background-color: var(--color-accent-soft);
 }
 
 .fact dd {
@@ -91,6 +86,7 @@
   line-height: 1.1;
   font-weight: 500;
   color: var(--color-light);
+  text-align: center;
 }
 
 @keyframes bob {
@@ -125,11 +121,5 @@
   .dates {
     margin-block-start: -16px;
     font-size: clamp(1.55rem, 7vw, 2.1rem);
-    transform: none;
-  }
-
-  .subtitle,
-  .facts {
-    transform: none;
   }
 }

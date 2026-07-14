@@ -22,7 +22,9 @@ export default function Hero() {
         <p className={styles.dates}>1-3.10.2026</p>
 
         <p className={styles.subtitle}>
-          {noOrphans("בתים פתוחים, סדנאות, הרצאות, הופעות")}
+          <span>{noOrphans("בתים פתוחים, סדנאות")}</span>
+          {" "}
+          <span>{noOrphans("הרצאות, הופעות")}</span>
         </p>
 
         <dl className={styles.facts}>

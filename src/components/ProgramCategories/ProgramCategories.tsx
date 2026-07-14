@@ -45,7 +45,6 @@ export default function ProgramCategories() {
                   <ul>
                     {examples.map((event) => (
                       <li key={event.id} className={styles.example}>
-                        <span className={styles.exampleDot} aria-hidden="true" />
                         <span>
                           <strong>{noOrphans(event.title)}</strong>
                           <span className={styles.exampleMeta}>
