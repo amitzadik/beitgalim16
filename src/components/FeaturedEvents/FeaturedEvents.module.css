@@ -7,12 +7,12 @@
 .container {
   position: relative;
   z-index: 1;
-  max-width: 1568px;
+  max-width: 1588px;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 360px)) minmax(0, 380px);
+  grid-template-columns: repeat(3, minmax(0, 360px)) minmax(0, 412px);
   justify-content: center;
   gap: 32px;
   /* כל כרטיס בגובה טבעי — מותר שהצורות יהיו שונות בגודל */

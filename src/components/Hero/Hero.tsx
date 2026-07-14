@@ -18,7 +18,7 @@ export default function Hero() {
           />
         </h1>
 
-        <p className={styles.dates}>1–3 באוקטובר 2026</p>
+        <p className={styles.dates}>1-3.10.2026</p>
 
         <p className={styles.subtitle}>
           בתים פתוחים, סדנאות, הרצאות, הופעות

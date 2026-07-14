@@ -9,7 +9,7 @@
   width: min(100%, var(--card-width, 360px));
   min-height: var(--card-height, 360px);
   /* ריפוד גדול כדי שכל הטקסט יישאר בתוך הצורה האורגנית */
-  padding: 60px;
+  padding: 60px 60px 60px 52px;
   background-color: var(--color-surface);
   border-radius: var(--radius-blob-1);
   text-align: right;
@@ -40,9 +40,9 @@
 }
 
 .card:nth-child(4) {
-  --card-width: 380px;
+  --card-width: 412px;
   --card-height: 443px;
-  --text-width: 237px;
+  --text-width: 226px;
 }
 
 .card:nth-child(5) {
@@ -51,8 +51,9 @@
 }
 
 .card:nth-child(6) {
+  --card-width: 398px;
   --card-height: 410px;
-  --text-width: 237px;
+  --text-width: 224px;
   transform: translateY(-83px);
 }
 
@@ -63,7 +64,7 @@
 
 .card:nth-child(8) {
   --card-height: 307px;
-  --text-width: 272px;
+  --text-width: 216px;
 }
 
 /* בהובר כל כרטיס משנה צורה לצורה אורגנית שונה מהבסיס שלו */
@@ -93,7 +94,7 @@
 .timeBadge {
   display: inline-flex;
   align-items: baseline;
-  justify-content: flex-start;
+  justify-content: flex-end;
   gap: 0.35rem;
   width: min(100%, var(--text-width));
   color: var(--color-light);
@@ -166,6 +167,10 @@
   .card:nth-child(4) {
     width: min(100%, 360px);
     min-height: 340px;
+  }
+
+  .card:nth-child(6) {
+    width: min(100%, 360px);
   }
 
   .card:nth-child(1),

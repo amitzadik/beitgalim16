@@ -84,12 +84,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: min(410px, 86vw);
-  min-height: 224px;
-  padding: 2.85rem 2.85rem 2.35rem;
+  width: min(407px, 86vw);
+  min-height: 292px;
+  padding: 50px 52px;
   color: #004b77;
   background-color: #6dcff6;
-  border-radius: 38% 46% 40% 44% / 44% 38% 46% 42%;
+  border-radius: 47% 53% 46% 54% / 42% 48% 52% 58%;
   direction: rtl;
   text-align: right;
   animation: rise 180ms ease;
@@ -97,8 +97,8 @@
 
 .infoClose {
   position: absolute;
-  inset-block-start: 1.7rem;
-  inset-inline-end: 2.15rem;
+  inset-block-start: 50px;
+  inset-inline-start: 51px;
   display: grid;
   place-items: center;
   width: 2rem;
@@ -115,47 +115,50 @@
 .infoClose:hover,
 .infoClose:focus-visible {
   transform: scale(1.1);
-  background-color: #008ab5;
+  background-color: #abe1fa;
+  color: #004b77;
 }
 
 .infoInner {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: min(100%, 29ch);
+  display: grid;
+  grid-template-columns: minmax(0, 246px) 34px;
+  column-gap: 24px;
+  row-gap: 0;
+  align-items: center;
+  width: min(100%, 304px);
   margin-inline: auto;
-  padding-block-start: 0;
+  padding-block-start: 42px;
   direction: rtl;
   text-align: right;
 }
 
 .infoHeader {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  align-items: start;
-  gap: 0.75rem;
-  width: 100%;
-  direction: rtl;
+  display: contents;
 }
 
 .infoNumber {
   display: grid;
   place-items: center;
-  width: 2.1rem;
-  height: 2.1rem;
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  width: 34px;
+  height: 34px;
+  align-self: center;
   color: #cbeffe;
   background-color: #004b77;
   border-radius: 999px;
   font-family: var(--font-body);
-  font-size: 0.95rem;
+  font-size: 20px;
   font-weight: 700;
-  line-height: 1;
+  line-height: 1.4336;
 }
 
 .infoTextColumn {
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
+  grid-column: 1;
+  grid-row: 1;
+  gap: 6.4px;
   min-width: 0;
   direction: rtl;
   text-align: right;
@@ -165,8 +168,9 @@
 .infoTag {
   display: block;
   margin: 0;
-  font-size: 0.82rem;
-  font-weight: 700;
+  font-size: 16px;
+  line-height: 1;
+  font-weight: 400;
   letter-spacing: 0.03em;
   color: #008ab5;
   text-align: right;
@@ -175,8 +179,8 @@
 .infoTitle {
   margin: 0;
   color: #004b77;
-  font-size: clamp(1.38rem, 2vw, 1.9rem);
-  line-height: 1.15;
+  font-size: 40px;
+  line-height: 0.9;
   text-align: right;
 }
 
@@ -190,10 +194,12 @@
 .infoEvents {
   display: flex;
   flex-direction: column;
-  gap: 0.55rem;
+  grid-column: 1;
+  grid-row: 2;
+  gap: 0;
   width: 100%;
-  margin: 0.72rem 0 0;
-  padding: 0.72rem 0 0;
+  margin: 0;
+  padding: 16px 0 0;
   list-style: none;
   direction: rtl;
   text-align: right;
@@ -201,22 +207,16 @@
 
 .infoEvents li {
   position: relative;
-  padding-inline-start: 0.9rem;
+  padding-inline-start: 0;
   color: #004b77;
-  font-size: 0.96rem;
-  line-height: 1.45;
+  font-size: 20px;
+  line-height: 1.4336;
+  font-weight: 500;
   text-align: right;
 }
 
 .infoEvents li::before {
-  content: "";
-  position: absolute;
-  inset-inline-start: 0;
-  inset-block-start: 0.62em;
-  width: 0.32rem;
-  height: 0.32rem;
-  background-color: #008ab5;
-  border-radius: 999px;
+  content: none;
 }
 
 @keyframes rise {
@@ -246,16 +246,23 @@
 
   .infoCard {
     width: 340px;
-    min-height: 220px;
-    padding: 2.85rem 2.35rem 2.2rem;
+    min-height: 260px;
+    padding: 42px 34px;
   }
 
   .infoInner {
-    width: min(100%, 27ch);
+    grid-template-columns: minmax(0, 1fr) 34px;
+    column-gap: 18px;
+    width: min(100%, 272px);
+    padding-block-start: 38px;
   }
 
   .infoClose {
-    inset-block-start: 1.55rem;
-    inset-inline-end: 1.8rem;
+    inset-block-start: 42px;
+    inset-inline-start: 34px;
+  }
+
+  .infoTitle {
+    font-size: 34px;
   }
 }

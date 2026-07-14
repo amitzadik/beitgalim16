@@ -63,14 +63,14 @@
 .visual {
   display: grid;
   place-items: center;
-  width: 280px;
-  height: 230px;
+  width: 336px;
+  height: 276px;
   margin-block-end: 0;
 }
 
 .visualImg {
   width: auto;
-  height: 173px;
+  height: 208px;
   object-fit: contain;
   /* מלבין את גרפיקת הקטגוריה כדי שתיראה על הכרטיס ללא האליפסה הלבנה */
   filter: brightness(0) invert(1);
@@ -79,13 +79,13 @@
 }
 
 .familyImg {
-  height: 203px;
+  height: 244px;
 }
 
 .performancesImg {
-  width: 280px;
+  width: 336px;
   height: auto;
-  max-height: 188px;
+  max-height: 226px;
 }
 
 .open-housesImg {

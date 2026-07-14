@@ -14,12 +14,12 @@
 
 .inner {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
-  gap: clamp(1rem, 3vw, 3.75rem);
+  min-height: 128px;
+  gap: 1rem;
   direction: ltr;
-  /* הלוגו במרחק 20px מקצה העמוד (עליון וצדדי) */
-  padding: 20px;
+  padding: 20px 32px 0 20px;
 }
 
 .brand {
@@ -31,7 +31,7 @@
 
 .logo {
   width: auto;
-  height: clamp(74px, 6.25vw, 108px);
+  height: 108px;
   object-fit: contain;
   transition: transform var(--transition);
 }
@@ -43,22 +43,25 @@
 .desktopNav ul {
   display: flex;
   align-items: center;
-  gap: clamp(1.8rem, 3.5vw, 3.75rem);
+  gap: 60px;
   direction: rtl;
+  margin-block-start: 41px;
+  padding-inline: 0;
 }
 
 .navLink {
   position: relative;
-  padding: 0.35rem 0;
+  padding: 0;
   font-family: var(--font-heading);
-  font-size: clamp(1.25rem, 1.75vw, 1.875rem);
+  font-size: 30px;
+  line-height: 25.6px;
   font-weight: 500;
   color: var(--color-light);
   transition: color var(--transition);
 }
 
 .navLink:hover {
-  color: #fff;
+  color: #abe1fa;
 }
 
 .menuToggle {
@@ -128,10 +131,16 @@
 }
 
 .mobileLink:hover {
-  color: #fff;
+  color: #abe1fa;
 }
 
 @media (max-width: 860px) {
+  .inner {
+    align-items: center;
+    min-height: auto;
+    padding: 18px 20px;
+  }
+
   .desktopNav {
     display: none;
   }
