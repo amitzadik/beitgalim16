@@ -25,11 +25,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.72rem;
+  gap: 20px;
   min-height: 560px;
   width: min(100%, 400px);
-  /* ריפוד תחתון גדול יותר — שומר את הטקסט במרכז הרחב של הצורה */
-  padding: 3.75rem;
+  padding: 60px;
   background-color: var(--color-surface);
   border-radius: var(--radius-blob-1);
   text-align: right;
@@ -63,14 +62,16 @@
 .visual {
   display: grid;
   place-items: center;
-  width: 336px;
-  height: 276px;
+  width: 280px;
+  height: 188px;
   margin-block-end: 0;
 }
 
 .visualImg {
   width: auto;
-  height: 208px;
+  height: 188px;
+  max-width: 280px;
+  max-height: 188px;
   object-fit: contain;
   /* מלבין את גרפיקת הקטגוריה כדי שתיראה על הכרטיס ללא האליפסה הלבנה */
   filter: brightness(0) invert(1);
@@ -79,19 +80,20 @@
 }
 
 .familyImg {
-  height: 244px;
+  width: 188px;
+  height: 188px;
 }
 
 .performancesImg {
-  width: 336px;
+  width: 280px;
   height: auto;
-  max-height: 226px;
+  max-height: 188px;
 }
 
 .open-housesImg {
   width: 260px;
   height: auto;
-  max-height: 204px;
+  max-height: 188px;
 }
 
 .card:hover .visualImg {
@@ -100,31 +102,31 @@
 
 .description {
   color: var(--color-text-muted);
-  width: min(100%, 221px);
-  font-size: 1.25rem;
+  width: min(100%, 142px);
+  font-size: 20px;
   line-height: 1.1;
   text-align: right;
 }
 
 .examples {
-  width: min(100%, 221px);
+  width: min(100%, 128px);
   margin-block-start: 0;
-  padding-block-start: 0.75rem;
+  padding-block-start: 0;
   text-align: right;
 }
 
 .examples ul {
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
+  gap: 9.6px;
 }
 
 .example {
   display: flex;
   align-items: flex-start;
-  gap: 0.55rem;
-  font-size: 1.25rem;
-  line-height: 1.2;
+  gap: 8.8px;
+  font-size: 20px;
+  line-height: 1.4336;
   text-align: right;
 }
 
@@ -135,7 +137,10 @@
 }
 
 .exampleMeta {
-  font-size: 1rem;
+  display: block;
+  margin-block-start: 0;
+  font-size: 16px;
+  line-height: 1.6;
   color: var(--color-text-muted);
 }
 
@@ -150,7 +155,19 @@
 
 @media (max-width: 700px) {
   .card {
-    min-height: 500px;
+    min-height: 560px;
+    padding: 60px;
+  }
+}
+
+@media (max-width: 460px) {
+  .card {
+    width: min(100%, 400px);
+    padding: 52px;
+  }
+
+  .visual {
+    width: min(100%, 280px);
   }
 }
 
