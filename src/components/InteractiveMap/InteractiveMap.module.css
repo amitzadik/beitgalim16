@@ -1,6 +1,6 @@
 .section {
   position: relative;
-  padding-block: var(--section-padding) calc(var(--section-padding) + clamp(1.5rem, 4vw, 3rem));
+  padding-block: var(--section-padding) clamp(4rem, 6.5vw, 7rem);
   overflow: hidden;
 }
 
@@ -13,6 +13,7 @@
 .mapWrap {
   width: 100vw;
   margin-inline: calc(50% - 50vw);
+  margin-block-start: 0;
 }
 
 /* המפה ללא מסגרת — התמונה עצמה בלבד עם המרקרים מעליה */

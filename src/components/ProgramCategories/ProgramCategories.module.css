@@ -1,18 +1,20 @@
 .section {
   position: relative;
-  padding-block: var(--section-padding);
+  padding-block: clamp(3.6rem, 6.5vw, 7rem) var(--section-padding);
   overflow: hidden;
 }
 
 .container {
   position: relative;
   z-index: 1;
+  max-width: 1710px;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 318px), 1fr));
-  gap: calc(clamp(1.2rem, 2.4vw, 2rem) + 40px);
+  grid-template-columns: repeat(4, minmax(0, 400px));
+  justify-content: center;
+  gap: 20px;
   /* כל כרטיס בגובה טבעי — מותר ש-4 הצורות יהיו שונות */
   align-items: start;
 }
@@ -24,9 +26,10 @@
   align-items: center;
   justify-content: center;
   gap: 0.72rem;
-  min-height: 520px;
+  min-height: 560px;
+  width: min(100%, 400px);
   /* ריפוד תחתון גדול יותר — שומר את הטקסט במרכז הרחב של הצורה */
-  padding: 3.45rem 3.55rem 3.75rem;
+  padding: 3.75rem;
   background-color: var(--color-surface);
   border-radius: var(--radius-blob-1);
   text-align: right;
@@ -60,6 +63,7 @@
 .visual {
   display: grid;
   place-items: center;
+  width: 280px;
   height: 230px;
   margin-block-end: 0;
 }
@@ -78,20 +82,34 @@
   height: 203px;
 }
 
+.performancesImg {
+  width: 280px;
+  height: auto;
+  max-height: 188px;
+}
+
+.open-housesImg {
+  width: 260px;
+  height: auto;
+  max-height: 204px;
+}
+
 .card:hover .visualImg {
   transform: scale(1.08) rotate(-2deg);
 }
 
 .description {
   color: var(--color-text-muted);
-  width: min(100%, 26ch);
+  width: min(100%, 221px);
+  font-size: 1.25rem;
+  line-height: 1.1;
   text-align: right;
 }
 
 .examples {
-  width: min(100%, 26ch);
-  margin-block-start: 0.2rem;
-  padding-block-start: 0.55rem;
+  width: min(100%, 221px);
+  margin-block-start: 0;
+  padding-block-start: 0.75rem;
   text-align: right;
 }
 
@@ -105,7 +123,8 @@
   display: flex;
   align-items: flex-start;
   gap: 0.55rem;
-  font-size: 0.95rem;
+  font-size: 1.25rem;
+  line-height: 1.2;
   text-align: right;
 }
 
@@ -116,7 +135,7 @@
 }
 
 .exampleMeta {
-  font-size: 0.82rem;
+  font-size: 1rem;
   color: var(--color-text-muted);
 }
 
@@ -132,5 +151,19 @@
 @media (max-width: 700px) {
   .card {
     min-height: 500px;
+  }
+}
+
+@media (max-width: 1500px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 400px));
+  }
+}
+
+@media (max-width: 940px) {
+  .grid {
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+    gap: 28px;
   }
 }

@@ -1,7 +1,7 @@
 .hero {
   position: relative;
   overflow: hidden;
-  padding-block: clamp(7.5rem, 16vw, 11rem) clamp(4rem, 10vw, 7rem);
+  padding-block: clamp(4.8rem, 4.6vw, 5rem) clamp(4.8rem, 8vw, 7rem);
 }
 
 .inner {
@@ -11,7 +11,7 @@
   flex-direction: column;
   align-items: center;
   text-align: right;
-  gap: clamp(1rem, 2.2vw, 1.45rem);
+  gap: clamp(0.65rem, 1.7vw, 1.4rem);
 }
 
 .title {
@@ -29,7 +29,7 @@
 .dates {
   width: min(100%, 48ch);
   font-family: var(--font-heading);
-  font-size: clamp(1.4rem, 3.4vw, 2.1rem);
+  font-size: clamp(1.4rem, 1.95vw, 2.1rem);
   font-weight: 700;
   color: var(--color-light);
   letter-spacing: 0.01em;
@@ -39,7 +39,7 @@
 .subtitle {
   width: min(100%, 48ch);
   max-width: 48ch;
-  font-size: clamp(1.1rem, 3vw, 1.45rem);
+  font-size: clamp(1rem, 1.16vw, 1.25rem);
   color: var(--color-text-muted);
   font-weight: 500;
   text-align: right;
@@ -74,7 +74,7 @@
 
 .fact dd {
   margin: 0;
-  font-size: clamp(1rem, 2.4vw, 1.2rem);
+  font-size: clamp(1rem, 1.16vw, 1.25rem);
   font-weight: 500;
   color: var(--color-light);
 }

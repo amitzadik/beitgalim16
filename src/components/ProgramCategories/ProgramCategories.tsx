@@ -4,7 +4,14 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import { categories, getEventsByIds } from "@/data/events";
 import styles from "./ProgramCategories.module.css";
 
+const figmaCompositionOrder = ["performances", "open-houses", "tours", "family"];
+
 export default function ProgramCategories() {
+  const orderedCategories = [...categories].sort(
+    (a, b) =>
+      figmaCompositionOrder.indexOf(a.id) - figmaCompositionOrder.indexOf(b.id),
+  );
+
   return (
     <section id="program" className={styles.section}>
       <Container className={styles.container}>
@@ -14,7 +21,7 @@ export default function ProgramCategories() {
         />
 
         <div className={styles.grid}>
-          {categories.map((category) => {
+          {orderedCategories.map((category) => {
             const examples = getEventsByIds(category.exampleEventIds);
             return (
               <article key={category.id} className={styles.card}>
@@ -24,9 +31,7 @@ export default function ProgramCategories() {
                     alt=""
                     width={709}
                     height={709}
-                    className={`${styles.visualImg} ${
-                      category.id === "family" ? styles.familyImg : ""
-                    }`}
+                    className={`${styles.visualImg} ${styles[`${category.id}Img`] ?? ""}`}
                     aria-hidden="true"
                   />
                 </div>
