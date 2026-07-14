@@ -96,6 +96,10 @@ p {
   text-align: right;
 }
 
+:where(p, li, dd, span, strong, a, button) {
+  text-wrap: pretty;
+}
+
 a {
   color: inherit;
   text-decoration: none;

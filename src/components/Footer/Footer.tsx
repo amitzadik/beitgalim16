@@ -1,3 +1,4 @@
+import { noOrphans } from "@/utils/noOrphans";
 import styles from "./Footer.module.css";
 
 export default function Footer() {
@@ -9,9 +10,11 @@ export default function Footer() {
         <div className={styles.eventColumn}>
           <div className={styles.brand}>
             <div>
-              <p className={styles.brandTitle}>פסטיבל בית גלים ה־16</p>
+              <p className={styles.brandTitle}>
+                {noOrphans("פסטיבל בית גלים ה־16")}
+              </p>
               <p className={styles.brandSub}>
-                שלושה ימים של תרבות, ים ואמנות בשכונת בת גלים
+                {noOrphans("שלושה ימים של תרבות, ים ואמנות בשכונת בת גלים")}
               </p>
             </div>
           </div>
@@ -19,14 +22,18 @@ export default function Footer() {
 
         <div className={styles.metaColumn}>
           <div className={styles.info}>
-            <p>מומלץ להגיע בתחבורה ציבורית ולנוע ברגל בין המוקדים.</p>
             <p>
-              הסדרי נגישות <span dir="ltr">04-8356356</span>
+              {noOrphans(
+                "מומלץ להגיע בתחבורה ציבורית ולנוע ברגל בין המוקדים.",
+              )}
+            </p>
+            <p>
+              {noOrphans("הסדרי נגישות")} <span dir="ltr">04-8356356</span>
             </p>
           </div>
 
           <p className={styles.copyright}>
-            © {year} פסטיבל בית גלים. כל הזכויות שמורות.
+            {noOrphans(`© ${year} פסטיבל בית גלים. כל הזכויות שמורות.`)}
           </p>
         </div>
       </div>

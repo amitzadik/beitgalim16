@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { navLinks } from "@/data/navigation";
+import { noOrphans } from "@/utils/noOrphans";
 import styles from "./Header.module.css";
 
 export default function Header() {
@@ -35,7 +36,7 @@ export default function Header() {
             {navLinks.map((link) => (
               <li key={link.href}>
                 <a href={link.href} className={styles.navLink}>
-                  {link.label}
+                  {noOrphans(link.label)}
                 </a>
               </li>
             ))}
@@ -71,7 +72,7 @@ export default function Header() {
                 className={styles.mobileLink}
                 onClick={() => setMenuOpen(false)}
               >
-                {link.label}
+                {noOrphans(link.label)}
               </a>
             </li>
           ))}

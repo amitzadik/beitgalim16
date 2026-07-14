@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Container from "@/components/ui/Container";
+import { noOrphans } from "@/utils/noOrphans";
 import styles from "./Hero.module.css";
 
 export default function Hero() {
@@ -21,15 +22,15 @@ export default function Hero() {
         <p className={styles.dates}>1-3.10.2026</p>
 
         <p className={styles.subtitle}>
-          בתים פתוחים, סדנאות, הרצאות, הופעות
+          {noOrphans("בתים פתוחים, סדנאות, הרצאות, הופעות")}
         </p>
 
         <dl className={styles.facts}>
           <div className={styles.fact}>
-            <dd>חמישי–שבת</dd>
+            <dd>{noOrphans("חמישי–שבת")}</dd>
           </div>
           <div className={styles.fact}>
-            <dd>הכניסה חופשית</dd>
+            <dd>{noOrphans("הכניסה חופשית")}</dd>
           </div>
         </dl>
       </Container>

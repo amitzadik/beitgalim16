@@ -4,6 +4,7 @@ import { useState } from "react";
 import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { defaultMapSpot, mapSpots, type MapSpot } from "@/data/mapSpots";
+import { noOrphans } from "@/utils/noOrphans";
 import IllustratedMap from "./IllustratedMap";
 import styles from "./InteractiveMap.module.css";
 
@@ -92,12 +93,16 @@ export default function InteractiveMap() {
                     <div className={styles.infoTextColumn}>
                       {activeSpot.kind === "event" && (
                         <span className={styles.infoTag}>
-                          {getKindLabel(activeSpot.kind)}
+                          {noOrphans(getKindLabel(activeSpot.kind))}
                         </span>
                       )}
-                      <h3 className={styles.infoTitle}>{activeSpot.title}</h3>
+                      <h3 className={styles.infoTitle}>
+                        {noOrphans(activeSpot.title)}
+                      </h3>
                       {activeSpot.address && (
-                        <p className={styles.infoAddress}>{activeSpot.address}</p>
+                        <p className={styles.infoAddress}>
+                          {noOrphans(activeSpot.address)}
+                        </p>
                       )}
                     </div>
                   </div>
@@ -105,7 +110,7 @@ export default function InteractiveMap() {
                   <ul className={styles.infoEvents}>
                     {activeSpot.events.map((event) => (
                       <li key={event} className={styles.infoEvent}>
-                        {event}
+                        {noOrphans(event)}
                       </li>
                     ))}
                   </ul>

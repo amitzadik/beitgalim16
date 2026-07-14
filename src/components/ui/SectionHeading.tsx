@@ -1,3 +1,4 @@
+import { noOrphans } from "@/utils/noOrphans";
 import styles from "./SectionHeading.module.css";
 
 interface SectionHeadingProps {
@@ -14,8 +15,10 @@ export default function SectionHeading({
 }: SectionHeadingProps) {
   return (
     <div className={`${styles.heading} ${styles[align]}`}>
-      <h2 className={styles.title}>{title}</h2>
-      {description && <p className={styles.description}>{description}</p>}
+      <h2 className={styles.title}>{noOrphans(title)}</h2>
+      {description && (
+        <p className={styles.description}>{noOrphans(description)}</p>
+      )}
     </div>
   );
 }

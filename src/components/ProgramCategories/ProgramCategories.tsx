@@ -2,6 +2,7 @@ import Image from "next/image";
 import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { categories, getEventsByIds } from "@/data/events";
+import { noOrphans } from "@/utils/noOrphans";
 import styles from "./ProgramCategories.module.css";
 
 const figmaCompositionOrder = ["performances", "open-houses", "tours", "family"];
@@ -36,7 +37,9 @@ export default function ProgramCategories() {
                   />
                 </div>
 
-                <p className={styles.description}>{category.description}</p>
+                <p className={styles.description}>
+                  {noOrphans(category.description)}
+                </p>
 
                 <div className={styles.examples}>
                   <ul>
@@ -44,9 +47,9 @@ export default function ProgramCategories() {
                       <li key={event.id} className={styles.example}>
                         <span className={styles.exampleDot} aria-hidden="true" />
                         <span>
-                          <strong>{event.title}</strong>
+                          <strong>{noOrphans(event.title)}</strong>
                           <span className={styles.exampleMeta}>
-                            {event.day} · {event.time}
+                            {noOrphans(event.day)} · {event.time}
                           </span>
                         </span>
                       </li>
