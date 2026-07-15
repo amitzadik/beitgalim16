@@ -102,7 +102,7 @@ export const events: FestivalEvent[] = [
   },
   {
     id: "tzlilei-hatzafon",
-    title: "“צלילי הצפון”",
+    title: "צלילי הצפון",
     performer: "בהנחיית יואב קוטנר",
     day: "יום שבת",
     time: "18:00",
