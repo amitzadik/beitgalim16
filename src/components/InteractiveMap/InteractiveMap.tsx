@@ -24,6 +24,9 @@ export default function InteractiveMap() {
   const [isCardOpen, setIsCardOpen] = useState(true);
 
   const activeSpot = mapSpots.find((spot) => spot.id === activeId) ?? defaultMapSpot;
+  const isOpenHouse = activeSpot.kind === "open-house";
+  const infoTitle = isOpenHouse ? activeSpot.address ?? activeSpot.title : activeSpot.title;
+  const infoEvents = isOpenHouse ? [activeSpot.title] : activeSpot.events;
 
   const selectSpot = (id: string) => {
     setActiveId(id);
@@ -91,15 +94,13 @@ export default function InteractiveMap() {
                   <div className={styles.infoHeader}>
                     <span className={styles.infoNumber}>{activeSpot.number}</span>
                     <div className={styles.infoTextColumn}>
-                      {activeSpot.kind === "event" && (
-                        <span className={styles.infoTag}>
-                          {noOrphans(getKindLabel(activeSpot.kind))}
-                        </span>
-                      )}
+                      <span className={styles.infoTag}>
+                        {noOrphans(getKindLabel(activeSpot.kind))}
+                      </span>
                       <h3 className={styles.infoTitle}>
-                        {noOrphans(activeSpot.title)}
+                        {noOrphans(infoTitle)}
                       </h3>
-                      {activeSpot.address && (
+                      {activeSpot.kind === "event" && activeSpot.address && (
                         <p className={styles.infoAddress}>
                           {noOrphans(activeSpot.address)}
                         </p>
@@ -108,7 +109,7 @@ export default function InteractiveMap() {
                   </div>
 
                   <ul className={styles.infoEvents}>
-                    {activeSpot.events.map((event) => (
+                    {infoEvents.map((event) => (
                       <li key={event} className={styles.infoEvent}>
                         {noOrphans(event)}
                       </li>
