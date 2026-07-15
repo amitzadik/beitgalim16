@@ -14,6 +14,9 @@ export interface FestivalEvent {
   locationId: LocationId;
   locationName: string;
   description?: string;
+  /** תצוגת יום/שעה ייעודית לסקשן התוכנית, אם שונה מהאירוע המלא */
+  programDay?: string;
+  programTime?: string;
   /** האם להציג ככרטיס באזור "אירועים מרכזיים" */
   featured?: boolean;
 }
@@ -83,6 +86,7 @@ export const events: FestivalEvent[] = [
     locationName: "מגרש המשחקים בחוף הלגונה",
     description:
       "בונים יחד סירות מקרטון, ובשעה 18:00 יוצאים למשט קבוצתי חגיגי בים.",
+    programTime: "10:00",
     featured: true,
   },
   {
@@ -172,6 +176,17 @@ export const events: FestivalEvent[] = [
     description: "התעמלות בוקר וכניסה משותפת למים לפתיחת היום.",
   },
   {
+    id: "social-highschool-workshops",
+    title: "סדנאות ויצירה בתיכון החברתי",
+    performer: "פעילות לכל המשפחה",
+    day: "יום שישי",
+    time: "10:00",
+    programDay: "יום שישי ויום שבת",
+    locationId: "merkaz-kehilati",
+    locationName: "התיכון החברתי",
+    description: "פעילויות יצירה קהילתיות לאורך הפסטיבל.",
+  },
+  {
     id: "bar-galim-meetup",
     title: "מפגש קהילה בבר גלים",
     performer: "אירוע קהילתי",
@@ -259,7 +274,7 @@ export const categories: ProgramCategory[] = [
     description: "פעילויות יצירה, ים וחוף שמתאימות לקטנים ולגדולים כאחד.",
     icon: "family",
     image: "/images/family.png",
-    exampleEventIds: ["cardboard-boats", "beach-morning"],
+    exampleEventIds: ["cardboard-boats", "social-highschool-workshops"],
   },
   {
     id: "open-houses",

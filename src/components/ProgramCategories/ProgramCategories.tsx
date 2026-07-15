@@ -25,7 +25,10 @@ export default function ProgramCategories() {
           {orderedCategories.map((category) => {
             const examples = getEventsByIds(category.exampleEventIds);
             return (
-              <article key={category.id} className={styles.card}>
+              <article
+                key={category.id}
+                className={`${styles.card} ${styles[`${category.id}Card`] ?? ""}`}
+              >
                 <div className={styles.visual}>
                   <Image
                     src={category.image}
@@ -48,7 +51,8 @@ export default function ProgramCategories() {
                         <span>
                           <strong>{noOrphans(event.title)}</strong>
                           <span className={styles.exampleMeta}>
-                            {noOrphans(event.day)} · {event.time}
+                            {noOrphans(event.programDay ?? event.day)} /{" "}
+                            {event.programTime ?? event.time}
                           </span>
                         </span>
                       </li>

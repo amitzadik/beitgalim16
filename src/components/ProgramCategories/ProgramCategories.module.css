@@ -7,14 +7,14 @@
 .container {
   position: relative;
   z-index: 1;
-  max-width: 1764px;
+  max-width: 1768px;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(300px, 400px));
+  grid-template-columns: repeat(4, minmax(0, 427px));
   justify-content: center;
-  gap: 20px;
+  gap: 25px;
   /* כל כרטיס בגובה טבעי — מותר ש-4 הצורות יהיו שונות */
   align-items: start;
 }
@@ -25,20 +25,18 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 18px;
-  min-height: 560px;
+  gap: 12px;
+  justify-self: center;
+  min-height: 650px;
   width: 100%;
-  padding: 67px 60px;
+  max-width: 427px;
+  padding: 103px 73px;
   background-color: var(--color-surface);
   border-radius: var(--radius-blob-1);
   text-align: right;
   overflow: hidden;
   transition: transform var(--transition), box-shadow var(--transition),
     background-color var(--transition), border-radius var(--transition);
-}
-
-.card:nth-child(odd) {
-  margin-block-start: 283px;
 }
 
 .card:nth-child(4n + 2) {
@@ -69,7 +67,7 @@
   place-items: center;
   width: 280px;
   height: 204px;
-  margin-block-end: -6px;
+  margin-block-end: 0;
 }
 
 .visualImg {
@@ -139,7 +137,7 @@
 .example {
   display: block;
   font-size: 20px;
-  line-height: 1.4336;
+  line-height: 1.1;
   direction: rtl;
   text-align: right;
   overflow-wrap: normal;
@@ -166,17 +164,73 @@
   word-break: keep-all;
 }
 
+.familyCard,
+.toursCard,
+.open-housesCard {
+  min-height: 650px;
+}
+
+.performancesCard {
+  min-height: 600px;
+  max-width: 387px;
+  padding: 92px 53px 93px;
+}
+
+.performancesCard .visual {
+  height: 188px;
+}
+
+.performancesCard .visualImg {
+  height: 188px;
+  max-height: 188px;
+}
+
+.performancesCard .description,
+.performancesCard .examples {
+  width: min(100%, 192px);
+}
+
+.performancesCard .description {
+  margin-block-start: 8px;
+}
+
+.performancesCard .examples {
+  margin-block-start: 8px;
+}
+
+.familyCard .examples,
+.toursCard .examples,
+.open-housesCard .examples {
+  margin-block-start: 0;
+}
+
+.familyCard .description,
+.toursCard .description,
+.open-housesCard .description {
+  width: min(100%, 187px);
+}
+
 @media (max-width: 700px) {
   .card {
-    min-height: 560px;
-    padding: 67px 60px;
+    min-height: 650px;
+    padding: 103px 73px;
+  }
+
+  .performancesCard {
+    min-height: 600px;
+    padding: 92px 53px 93px;
   }
 }
 
 @media (max-width: 460px) {
   .card {
-    width: min(100%, 400px);
-    padding: 62px 54px;
+    width: min(100%, 427px);
+    padding: 90px 60px;
+  }
+
+  .performancesCard {
+    width: min(100%, 387px);
+    padding: 82px 48px;
   }
 
   .visual {
@@ -189,13 +243,9 @@
   }
 }
 
-@media (max-width: 1380px) {
+@media (max-width: 1500px) {
   .grid {
-    grid-template-columns: repeat(2, minmax(0, 400px));
-  }
-
-  .card:nth-child(odd) {
-    margin-block-start: 0;
+    grid-template-columns: repeat(2, minmax(0, 427px));
   }
 }
 
