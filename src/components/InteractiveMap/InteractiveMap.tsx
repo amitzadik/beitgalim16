@@ -42,7 +42,10 @@ export default function InteractiveMap() {
         />
 
         <div className={styles.mapWrap}>
-          <div className={styles.mapFrame}>
+          <div
+            className={styles.mapFrame}
+            onClick={() => setIsCardOpen(false)}
+          >
             <IllustratedMap />
 
             {mapSpots.map((spot) => {
@@ -59,7 +62,10 @@ export default function InteractiveMap() {
                     top: `${spot.y}%`,
                   }}
                   onFocus={() => selectSpot(spot.id)}
-                  onClick={() => selectSpot(spot.id)}
+                  onClick={(event) => {
+                    event.stopPropagation();
+                    selectSpot(spot.id);
+                  }}
                   aria-pressed={isActive}
                   aria-label={`${getKindLabel(spot.kind)} ${spot.number}: ${spot.title}`}
                 >
@@ -78,6 +84,7 @@ export default function InteractiveMap() {
                   top: `${Math.min(Math.max(activeSpot.y, 14), 84)}%`,
                   transform: getCardTransform(activeSpot),
                 }}
+                onClick={(event) => event.stopPropagation()}
                 aria-live="polite"
                 aria-label={`פרטי מוקד: ${activeSpot.title}`}
               >

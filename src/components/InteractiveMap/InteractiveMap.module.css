@@ -107,8 +107,9 @@
 
 .infoClose {
   position: absolute;
-  inset-block-start: 50px;
-  left: 51px;
+  inset-block-start: 44px;
+  left: 58px;
+  z-index: 2;
   display: grid;
   place-items: center;
   width: 2rem;
@@ -117,8 +118,10 @@
   background-color: #004b77;
   border: 0;
   border-radius: 999px;
+  cursor: pointer;
   font-size: 1.32rem;
   line-height: 1;
+  pointer-events: auto;
   transition: transform 180ms ease, background-color 180ms ease;
 }
 
@@ -316,7 +319,7 @@
 
   .infoClose {
     inset-block-start: 42px;
-    left: 34px;
+    left: 42px;
   }
 
   .infoTitle {
