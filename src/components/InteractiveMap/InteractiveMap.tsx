@@ -21,7 +21,7 @@ function getCardTransform(spot: MapSpot) {
 
 export default function InteractiveMap() {
   const [activeId, setActiveId] = useState(defaultMapSpot.id);
-  const [isCardOpen, setIsCardOpen] = useState(true);
+  const [isCardOpen, setIsCardOpen] = useState(false);
 
   const activeSpot = mapSpots.find((spot) => spot.id === activeId) ?? defaultMapSpot;
   const isOpenHouse = activeSpot.kind === "open-house";
