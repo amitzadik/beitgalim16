@@ -25,8 +25,8 @@ export default function FeaturedEvents() {
     <section id="events" className={styles.section}>
       <Container className={styles.container}>
         <SectionHeading
-          title="אירועים נבחרים"
-          description="מבחר ההופעות והפעילויות שאסור לפספס — מהשקיעה על הטיילת ועד מסיבת הסגירה."
+          title="אירועים מרכזיים"
+          description="מבחר ההופעות והפעילויות שאסור לפספס"
         />
 
         <div className={styles.grid}>

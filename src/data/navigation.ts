@@ -7,5 +7,5 @@ export interface NavLink {
 export const navLinks: NavLink[] = [
   { href: "#events", label: "אירועים מרכזיים" },
   { href: "#map", label: "מפה" },
-  { href: "#program", label: "" },
+  { href: "#program", label: "תוכנית" },
 ];
