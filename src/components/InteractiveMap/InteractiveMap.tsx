@@ -30,31 +30,31 @@ function getInfoCardMetrics(
     ...infoEvents.map((event) => event.length),
   );
   const estimatedLineCount =
-    Math.ceil(infoTitle.length / 16) +
-    infoEvents.reduce((total, event) => total + Math.ceil(event.length / 24), 0);
+    Math.ceil(infoTitle.length / 18) +
+    infoEvents.reduce((total, event) => total + Math.ceil(event.length / 26), 0);
   const contentWeight =
-    longestLine * 5.2 + totalEventLength * 1.7 + infoEvents.length * 30;
-  const baseWidth = spot.kind === "event" ? 390 : 360;
-  const maxWidth = spot.kind === "event" ? 620 : 560;
+    longestLine * 2.1 + totalEventLength * 0.75 + infoEvents.length * 14;
+  const baseWidth = spot.kind === "event" ? 300 : 292;
+  const maxWidth = spot.kind === "event" ? 520 : 500;
   const width = Math.min(maxWidth, Math.round(baseWidth + contentWeight));
-  const textWidth = Math.min(width - 150, spot.kind === "event" ? 430 : 390);
-  const padding = spot.kind === "event" ? 68 : 64;
-  const closeOffset = Math.round(padding * 1.02);
+  const textWidth = Math.min(width - 126, spot.kind === "event" ? 350 : 330);
+  const padding = spot.kind === "event" ? 56 : 54;
+  const closeOffset = Math.round(padding * 1.08);
   const contentShift = Math.round(closeOffset * -0.2);
   const minHeight = Math.round(
     Math.max(
       spot.kind === "event" ? 286 : 268,
-      padding * 2 + 88 + estimatedLineCount * 26,
+      padding * 2 + 76 + estimatedLineCount * 24,
     ),
   );
 
   return {
     "--info-card-width": `${width}px`,
-    "--info-card-min-height": `${Math.min(minHeight, 430)}px`,
+    "--info-card-min-height": `${Math.min(minHeight, 390)}px`,
     "--info-card-padding": `${padding}px`,
     "--info-close-offset": `${closeOffset}px`,
     "--info-content-shift": `${contentShift}px`,
-    "--info-text-width": `${Math.max(textWidth, 246)}px`,
+    "--info-text-width": `${Math.max(textWidth, 190)}px`,
   } as CSSProperties;
 }
 
