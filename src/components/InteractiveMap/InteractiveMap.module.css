@@ -108,7 +108,7 @@
 
 .infoClose {
   position: absolute;
-  inset-block-start: var(--info-close-offset, 64px);
+  inset-block-start: calc(var(--info-close-offset, 64px) - 8px);
   left: var(--info-close-offset, 64px);
   z-index: 2;
   display: grid;
@@ -141,7 +141,6 @@
   align-items: center;
   width: min(100%, calc(var(--info-text-width, 300px) + 58px));
   margin-inline: auto;
-  transform: translateX(var(--info-content-shift, 0));
   direction: rtl;
   text-align: right;
 }
@@ -194,6 +193,8 @@
   display: block;
   grid-column: 2;
   grid-row: 1;
+  min-width: 0;
+  max-width: 100%;
   margin: 0;
   font-size: 16px;
   line-height: 1;
@@ -208,6 +209,8 @@
 .infoTitle {
   grid-column: 2;
   grid-row: 2;
+  min-width: 0;
+  max-width: 100%;
   margin: 0;
   color: #004b77;
   font-size: 40px;
@@ -226,6 +229,8 @@
 .infoAddress {
   grid-column: 2;
   grid-row: 3;
+  min-width: 0;
+  max-width: 100%;
   margin: 0;
   color: #005f8e;
   font-weight: 700;
@@ -241,6 +246,8 @@
   grid-row: 2;
   gap: 0;
   width: 100%;
+  min-width: 0;
+  max-width: 100%;
   margin: 0;
   padding: 16px 0 0;
   list-style: none;
@@ -311,7 +318,6 @@
     grid-template-columns: 34px minmax(0, 1fr);
     column-gap: 18px;
     width: min(100%, calc(var(--info-text-width, 272px) + 52px));
-    transform: none;
   }
 
   .infoHeader,
@@ -321,7 +327,7 @@
   }
 
   .infoClose {
-    inset-block-start: 42px;
+    inset-block-start: 34px;
     left: 42px;
   }
 

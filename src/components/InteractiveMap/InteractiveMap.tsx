@@ -40,7 +40,6 @@ function getInfoCardMetrics(
   const textWidth = Math.min(width - 126, spot.kind === "event" ? 350 : 330);
   const padding = spot.kind === "event" ? 56 : 54;
   const closeOffset = Math.round(padding * 1.08);
-  const contentShift = Math.round(closeOffset * -0.2);
   const minHeight = Math.round(
     Math.max(
       spot.kind === "event" ? 286 : 268,
@@ -53,7 +52,6 @@ function getInfoCardMetrics(
     "--info-card-min-height": `${Math.min(minHeight, 390)}px`,
     "--info-card-padding": `${padding}px`,
     "--info-close-offset": `${closeOffset}px`,
-    "--info-content-shift": `${contentShift}px`,
     "--info-text-width": `${Math.max(textWidth, 190)}px`,
   } as CSSProperties;
 }
