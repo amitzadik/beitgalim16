@@ -141,6 +141,7 @@
   align-items: center;
   width: min(100%, calc(var(--info-text-width, 300px) + 58px));
   margin-inline: auto;
+  transform: translateX(var(--info-content-shift, 0));
   direction: rtl;
   text-align: right;
 }
@@ -310,6 +311,7 @@
     grid-template-columns: 34px minmax(0, 1fr);
     column-gap: 18px;
     width: min(100%, calc(var(--info-text-width, 272px) + 52px));
+    transform: none;
   }
 
   .infoHeader,
