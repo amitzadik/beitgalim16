@@ -36,9 +36,13 @@ function getInfoCardMetrics(
     longestLine * 2.1 + totalEventLength * 0.75 + infoEvents.length * 14;
   const baseWidth = spot.kind === "event" ? 300 : 292;
   const maxWidth = spot.kind === "event" ? 520 : 500;
-  const width = Math.min(maxWidth, Math.round(baseWidth + contentWeight));
+  const extraBreathingRoom = spot.number === 8 ? 42 : 0;
+  const width = Math.min(
+    maxWidth,
+    Math.round(baseWidth + contentWeight + extraBreathingRoom),
+  );
   const textWidth = Math.min(width - 126, spot.kind === "event" ? 350 : 330);
-  const padding = spot.kind === "event" ? 56 : 54;
+  const padding = spot.kind === "event" ? 56 + (spot.number === 8 ? 10 : 0) : 54;
   const closeOffset = Math.round(padding * 1.08);
   const minHeight = Math.round(
     Math.max(
