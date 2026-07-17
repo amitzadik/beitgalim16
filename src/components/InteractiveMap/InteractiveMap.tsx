@@ -29,22 +29,29 @@ function getInfoCardMetrics(
     infoTitle.length,
     ...infoEvents.map((event) => event.length),
   );
+  const estimatedLineCount =
+    Math.ceil(infoTitle.length / 16) +
+    infoEvents.reduce((total, event) => total + Math.ceil(event.length / 24), 0);
   const contentWeight =
-    longestLine * 4.8 + totalEventLength * 1.55 + infoEvents.length * 28;
+    longestLine * 5.2 + totalEventLength * 1.7 + infoEvents.length * 30;
   const baseWidth = spot.kind === "event" ? 390 : 360;
   const maxWidth = spot.kind === "event" ? 620 : 560;
   const width = Math.min(maxWidth, Math.round(baseWidth + contentWeight));
   const textWidth = Math.min(width - 150, spot.kind === "event" ? 430 : 390);
+  const padding = spot.kind === "event" ? 68 : 64;
+  const closeOffset = Math.round(padding * 1.02);
   const minHeight = Math.round(
     Math.max(
       spot.kind === "event" ? 286 : 268,
-      222 + infoEvents.length * 28 + Math.ceil(totalEventLength / 58) * 18,
+      padding * 2 + 88 + estimatedLineCount * 26,
     ),
   );
 
   return {
     "--info-card-width": `${width}px`,
-    "--info-card-min-height": `${Math.min(minHeight, 390)}px`,
+    "--info-card-min-height": `${Math.min(minHeight, 430)}px`,
+    "--info-card-padding": `${padding}px`,
+    "--info-close-offset": `${closeOffset}px`,
     "--info-text-width": `${Math.max(textWidth, 246)}px`,
   } as CSSProperties;
 }

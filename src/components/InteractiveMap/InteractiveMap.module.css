@@ -87,7 +87,7 @@
   box-sizing: border-box;
   width: min(var(--info-card-width, 440px), calc(100vw - 32px));
   min-height: var(--info-card-min-height, 292px);
-  padding: clamp(48px, 5.2vw, 64px) clamp(52px, 6vw, 76px);
+  padding: var(--info-card-padding, 64px);
   color: #004b77;
   background-color: #6dcff6;
   border-radius: 47% 53% 46% 54% / 42% 48% 52% 58%;
@@ -102,14 +102,14 @@
 .infoCard.open-house {
   width: min(var(--info-card-width, 407px), calc(100vw - 32px));
   min-height: var(--info-card-min-height, 292px);
-  padding: clamp(48px, 5vw, 62px) clamp(50px, 5.5vw, 70px);
+  padding: var(--info-card-padding, 64px);
   border-radius: 48% 52% 45% 55% / 40% 48% 52% 60%;
 }
 
 .infoClose {
   position: absolute;
-  inset-block-start: clamp(34px, 8%, 48px);
-  left: clamp(38px, 9%, 62px);
+  inset-block-start: var(--info-close-offset, 64px);
+  left: var(--info-close-offset, 64px);
   z-index: 2;
   display: grid;
   place-items: center;
@@ -304,7 +304,7 @@
   .infoCard {
     width: min(var(--info-card-width, 360px), calc(100vw - 32px));
     min-height: var(--info-card-min-height, 260px);
-    padding: 46px 36px;
+    padding: 48px 40px;
   }
 
   .infoInner {
@@ -314,8 +314,8 @@
   }
 
   .infoClose {
-    inset-block-start: 34px;
-    left: 36px;
+    inset-block-start: 42px;
+    left: 42px;
   }
 
   .infoTitle {
@@ -324,7 +324,7 @@
 
   .infoCard.open-house {
     width: min(var(--info-card-width, 360px), calc(100vw - 32px));
-    padding-inline: 36px;
+    padding: 48px 40px;
   }
 
   .open-house .infoInner {
