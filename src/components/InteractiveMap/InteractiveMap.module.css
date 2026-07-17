@@ -154,14 +154,24 @@
 }
 
 .infoHeader {
-  display: contents;
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: 34px minmax(246px, var(--info-text-width, 300px));
+  column-gap: 24px;
+  row-gap: 6.4px;
+  align-items: center;
+}
+
+.open-house .infoHeader {
+  grid-template-columns: 34px minmax(246px, var(--info-text-width, 280px));
+  column-gap: 20px;
 }
 
 .infoNumber {
   display: grid;
   place-items: center;
   grid-column: 1;
-  grid-row: 1 / span 2;
+  grid-row: 2;
   width: 34px;
   height: 34px;
   align-self: center;
@@ -178,26 +188,11 @@
   align-self: center;
 }
 
-.infoTextColumn {
-  display: flex;
-  flex-direction: column;
-  grid-column: 2;
-  grid-row: 1;
-  gap: 6.4px;
-  min-width: 0;
-  direction: rtl;
-  text-align: right;
-  overflow-wrap: normal;
-  word-break: keep-all;
-}
-
-.open-house .infoTextColumn {
-  gap: 6.4px;
-}
-
 /* תווית סוג המוקד כטקסט רגיל (ללא צורת גלולה) */
 .infoTag {
   display: block;
+  grid-column: 2;
+  grid-row: 1;
   margin: 0;
   font-size: 16px;
   line-height: 1;
@@ -210,6 +205,8 @@
 }
 
 .infoTitle {
+  grid-column: 2;
+  grid-row: 2;
   margin: 0;
   color: #004b77;
   font-size: 40px;
@@ -226,6 +223,8 @@
 }
 
 .infoAddress {
+  grid-column: 2;
+  grid-row: 3;
   margin: 0;
   color: #005f8e;
   font-weight: 700;
@@ -311,6 +310,12 @@
     grid-template-columns: 34px minmax(0, 1fr);
     column-gap: 18px;
     width: min(100%, calc(var(--info-text-width, 272px) + 52px));
+  }
+
+  .infoHeader,
+  .open-house .infoHeader {
+    grid-template-columns: 34px minmax(0, 1fr);
+    column-gap: 18px;
   }
 
   .infoClose {

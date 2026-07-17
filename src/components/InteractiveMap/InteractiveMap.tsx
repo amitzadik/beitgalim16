@@ -139,19 +139,17 @@ export default function InteractiveMap() {
                 <div className={styles.infoInner}>
                   <div className={styles.infoHeader}>
                     <span className={styles.infoNumber}>{activeSpot.number}</span>
-                    <div className={styles.infoTextColumn}>
-                      <span className={styles.infoTag}>
-                        {noOrphans(getKindLabel(activeSpot.kind))}
-                      </span>
-                      <h3 className={styles.infoTitle}>
-                        {noOrphans(infoTitle)}
-                      </h3>
-                      {activeSpot.kind === "event" && activeSpot.address && (
-                        <p className={styles.infoAddress}>
-                          {noOrphans(activeSpot.address)}
-                        </p>
-                      )}
-                    </div>
+                    <span className={styles.infoTag}>
+                      {noOrphans(getKindLabel(activeSpot.kind))}
+                    </span>
+                    <h3 className={styles.infoTitle}>
+                      {noOrphans(infoTitle)}
+                    </h3>
+                    {activeSpot.kind === "event" && activeSpot.address && (
+                      <p className={styles.infoAddress}>
+                        {noOrphans(activeSpot.address)}
+                      </p>
+                    )}
                   </div>
 
                   <ul className={styles.infoEvents}>
