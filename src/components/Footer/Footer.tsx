@@ -20,6 +20,14 @@ export default function Footer() {
           </div>
         </div>
 
+        <div className={styles.logoColumn} aria-label="שותפים ותומכים">
+          <img
+            src="/images/footer-logos.png"
+            alt="לוגואים של שותפי ותומכי הפסטיבל"
+            className={styles.footerLogos}
+          />
+        </div>
+
         <div className={styles.metaColumn}>
           <div className={styles.info}>
             <p>

@@ -7,15 +7,16 @@
 /* רוחב מלא עם ריפוד 20px — מיושר ללוגו ולסרגל העליון */
 .inner {
   display: flex;
-  align-items: flex-start;
+  align-items: flex-end;
   justify-content: space-between;
-  gap: clamp(2rem, 8vw, 6rem);
+  gap: clamp(1.5rem, 5vw, 4rem);
   padding-inline: 20px;
   direction: rtl;
   text-align: right;
 }
 
 .eventColumn,
+.logoColumn,
 .metaColumn {
   min-width: 0;
   text-align: right;
@@ -23,6 +24,20 @@
 
 .eventColumn {
   max-width: 38ch;
+}
+
+.logoColumn {
+  flex: 1 1 36rem;
+  display: flex;
+  justify-content: center;
+  padding-inline: clamp(0.5rem, 2vw, 1.5rem);
+}
+
+.footerLogos {
+  display: block;
+  width: min(100%, 69.5rem);
+  height: auto;
+  object-fit: contain;
 }
 
 .metaColumn {
@@ -72,16 +87,33 @@
 @media (max-width: 760px) {
   .inner {
     flex-direction: column;
+    align-items: stretch;
     gap: 1.4rem;
   }
 
   .eventColumn,
+  .logoColumn,
   .metaColumn {
     max-width: none;
     width: 100%;
   }
 
+  .logoColumn {
+    justify-content: flex-start;
+    padding-inline: 0;
+    order: 2;
+  }
+
+  .eventColumn {
+    order: 1;
+  }
+
   .metaColumn {
     margin-inline-start: 0;
+    order: 3;
+  }
+
+  .footerLogos {
+    width: min(100%, 36rem);
   }
 }
