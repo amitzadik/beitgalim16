@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { type CSSProperties, useState } from "react";
 import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { defaultMapSpot, mapSpots, type MapSpot } from "@/data/mapSpots";
@@ -19,6 +19,36 @@ function getCardTransform(spot: MapSpot) {
   return `translate(${horizontal}, ${vertical})`;
 }
 
+function getInfoCardMetrics(
+  spot: MapSpot,
+  infoTitle: string,
+  infoEvents: string[],
+) {
+  const totalEventLength = infoEvents.join(" ").length;
+  const longestLine = Math.max(
+    infoTitle.length,
+    ...infoEvents.map((event) => event.length),
+  );
+  const contentWeight =
+    longestLine * 4.8 + totalEventLength * 1.55 + infoEvents.length * 28;
+  const baseWidth = spot.kind === "event" ? 390 : 360;
+  const maxWidth = spot.kind === "event" ? 620 : 560;
+  const width = Math.min(maxWidth, Math.round(baseWidth + contentWeight));
+  const textWidth = Math.min(width - 150, spot.kind === "event" ? 430 : 390);
+  const minHeight = Math.round(
+    Math.max(
+      spot.kind === "event" ? 286 : 268,
+      222 + infoEvents.length * 28 + Math.ceil(totalEventLength / 58) * 18,
+    ),
+  );
+
+  return {
+    "--info-card-width": `${width}px`,
+    "--info-card-min-height": `${Math.min(minHeight, 390)}px`,
+    "--info-text-width": `${Math.max(textWidth, 246)}px`,
+  } as CSSProperties;
+}
+
 export default function InteractiveMap() {
   const [activeId, setActiveId] = useState(defaultMapSpot.id);
   const [isCardOpen, setIsCardOpen] = useState(false);
@@ -27,6 +57,7 @@ export default function InteractiveMap() {
   const isOpenHouse = activeSpot.kind === "open-house";
   const infoTitle = isOpenHouse ? activeSpot.address ?? activeSpot.title : activeSpot.title;
   const infoEvents = isOpenHouse ? [activeSpot.title] : activeSpot.events;
+  const infoCardMetrics = getInfoCardMetrics(activeSpot, infoTitle, infoEvents);
 
   const selectSpot = (id: string) => {
     setActiveId(id);
@@ -80,6 +111,7 @@ export default function InteractiveMap() {
               <aside
                 className={`${styles.infoCard} ${styles[activeSpot.kind]}`}
                 style={{
+                  ...infoCardMetrics,
                   left: `${Math.min(Math.max(activeSpot.x, 12), 88)}%`,
                   top: `${Math.min(Math.max(activeSpot.y, 14), 84)}%`,
                   transform: getCardTransform(activeSpot),
